@@ -21,6 +21,6 @@ This repository is part of a larger collection of projects focused on domain mod
 - Expand the collection to include more domains and problem sets.
 - Develop additional converters for different formats.
 - Enhance the Rust project to provide more advanced planning and simulation features.
-- 
+  
 ## Contributions
 Contributions, bug reports, and feature requests are welcome. Feel free to open issues or submit pull requests.
