@@ -224,11 +224,11 @@
     (located person28 city2)
     (located person29 city9)
     (located person30 city2)
-    (located person31 city? )  ; [Ensure person31's goal location is defined correctly]
-    (located person32 city? )  ; [Ensure person32's goal location is defined]
-    (located person33 city? )  ; [Ensure person33's goal location is defined]
-    (located person34 city? )  ; [Ensure person34's goal location is defined]
-    (located person35 city? )  ; [Ensure person35's goal location is defined]
+    (located person31 city11 )  
+    (located person32 city12 )  
+    (located person33 city3 ) 
+    (located person34 city4 )  
+    (located person35 city12 )  
   ))
   (:metric minimize (+ (* 1 (total-time)) (* 3 (total-fuel-used))))
 )

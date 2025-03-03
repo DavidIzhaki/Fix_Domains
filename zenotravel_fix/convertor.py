@@ -8,14 +8,12 @@ def extract_pddl_state(pddl_text):
     state = {}
     
     # --- Extract Number of Cities ---
-    city_pattern = re.compile(r'\b(city\d+)\b')
-    cities_found = set(city_pattern.findall(pddl_text))
+    city_pattern = re.compile(r'\bcity(\d+)\b')
+    # Extract all numeric city identifiers and count unique ones
+    cities_found = {int(num) for num in city_pattern.findall(pddl_text)}
     state["num_cities"] = len(cities_found)
     
-    # --- Extract Airplane Attributes ---
-    airplanes = {}
-    
-    # Patterns for attributes in the :init section.
+    # --- Patterns for Airplane Attributes ---
     slow_burn_pattern = re.compile(r'\(= \(slow-burn (\w+)\)\s+(\d+)\)')
     fast_burn_pattern = re.compile(r'\(= \(fast-burn (\w+)\)\s+(\d+)\)')
     slow_speed_pattern = re.compile(r'\(= \(slow-speed (\w+)\)\s+(\d+)\)')
@@ -23,14 +21,16 @@ def extract_pddl_state(pddl_text):
     capacity_pattern = re.compile(r'\(= \(capacity (\w+)\)\s+(\d+)\)')
     fuel_pattern = re.compile(r'\(= \(fuel (\w+)\)\s+(\d+)\)')
     zoom_limit_pattern = re.compile(r'\(= \(zoom-limit (\w+)\)\s+(\d+)\)')
-    located_pattern = re.compile(r'\(located (\w+)\s+(\w+)\)')
     
-    # Helper: extract numeric index from a plane name "planeX"
+    # --- Dedicated Patterns for Locations ---
+    airplane_pattern = re.compile(r'\(located (plane\d+)\s+(city\d+)\)')
+    
+    
     def plane_index(name):
         m = re.search(r'plane(\d+)', name)
-        return int(m.group(1)) if m else name
-
-    # Build dictionaries keyed by plane name.
+        return int(m.group(1)) if m else None
+    
+    # --- Extract Airplane Attribute Dictionaries ---
     slow_burns = {m.group(1): int(m.group(2)) for m in slow_burn_pattern.finditer(pddl_text)}
     fast_burns = {m.group(1): int(m.group(2)) for m in fast_burn_pattern.finditer(pddl_text)}
     slow_speeds = {m.group(1): int(m.group(2)) for m in slow_speed_pattern.finditer(pddl_text)}
@@ -38,52 +38,76 @@ def extract_pddl_state(pddl_text):
     capacities = {m.group(1): int(m.group(2)) for m in capacity_pattern.finditer(pddl_text)}
     fuels = {m.group(1): int(m.group(2)) for m in fuel_pattern.finditer(pddl_text)}
     zoom_limits = {m.group(1): int(m.group(2)) for m in zoom_limit_pattern.finditer(pddl_text)}
+   # --- Extract Initial State `(:init ...)` Section ---
+    init_match = re.search(r'\(:init(.*?)\)\s*(?:\(:goal|\(:metric|\Z)', pddl_text, re.DOTALL)
+    if not init_match:
+        raise ValueError("ERROR: Could not find a properly formatted (:init ...) section in PDDL!")
+    init_section = init_match.group(1)
+    goal_match = re.search(r'\(:goal\s*\(and(.*)\)\s*\)', pddl_text, re.DOTALL)
+    if goal_match:
+        goal_section = goal_match.group(1)
+    else:
+        print("ERROR: Could not find (:goal ...) section in PDDL!")
+        exit(1)
+    # --- Extract Airplane Locations ---
+    airplane_locations = {}
+    for m in airplane_pattern.finditer(init_section):
+        plane_name = m.group(1)  # e.g., "plane1"
+        loc = m.group(2)         # e.g., "city0"
+        m_city = re.search(r'city(\d+)', loc)
+        if m_city:
+            airplane_locations[plane_name] = int(m_city.group(1))
     
-    # Get locations for airplanes.
-    locations = {}
-    for m in located_pattern.finditer(pddl_text):
-        obj = m.group(1)
-        loc = m.group(2)
-        if obj.startswith("plane"):
-            locations[obj] = loc
+   # Dedicated regex for persons with extra whitespace tolerance and ignore case.
+    person_pattern = re.compile(r'\(located\s+(person\d+)\s+(city\d+)\)')
+   
+    persons = {}
+    for m in person_pattern.finditer(init_section):
+        person_name = m.group(1)  # e.g., "person1"
+        city_str = m.group(2)     # e.g., "city4"
+        # Instead of using re.search, remove the known prefix:
+        person_idx = int(person_name.replace("person", " "))
+        city_idx = int(city_str.replace("city", " "))
+        persons[person_idx] = city_idx
 
-    # Combine attributes for each airplane.
-    for plane in set(list(slow_burns.keys()) + list(fast_burns.keys()) +
-                     list(slow_speeds.keys()) + list(fast_speeds.keys()) +
-                     list(capacities.keys()) + list(fuels.keys()) + list(zoom_limits.keys())):
+    
+    # --- Combine Airplane Attributes ---
+    airplanes = {}
+    plane_names = set(slow_burns.keys()) | set(fast_burns.keys()) | set(slow_speeds.keys()) | set(fast_speeds.keys()) | set(capacities.keys()) | set(fuels.keys()) | set(zoom_limits.keys())
+    for plane in plane_names:
         idx = plane_index(plane)
+        if idx is None:
+            continue
+        s_burn = slow_burns.get(plane, 0)
         s_speed = slow_speeds.get(plane, 0)
+        f_burn = fast_burns.get(plane, 0)
         f_speed = fast_speeds.get(plane, 0)
-        
-        # Get location index (e.g., "city0" becomes 0)
-        loc = locations.get(plane, None)
-        if loc:
-            loc_match = re.search(r'city(\d+)', loc)
-            loc_index = int(loc_match.group(1)) if loc_match else None
-        else:
-            loc_index = None
-
+        cap = capacities.get(plane, 0)
+        fuel_val = fuels.get(plane, 0)
         z_limit = zoom_limits.get(plane, 0)
+        loc_index = airplane_locations.get(plane, None)
+        # Format: [ [slow_burn, slow_speed], [fast_burn, fast_speed], [capacity, fuel], [location, zoom_limit] ]
         airplanes[idx] = [
-            [slow_burns.get(plane, 0), s_speed],
-            [fast_burns.get(plane, 0), f_speed],
-            [capacities.get(plane, 0), fuels.get(plane, 0)],
+            [s_burn, s_speed],
+            [f_burn, f_speed],
+            [cap, fuel_val],
             [loc_index, z_limit]
         ]
     state["airplanes"] = airplanes
-
+    state["persons"] = persons
+    
     # --- Extract Distances ---
     distances = {}
     distance_pattern = re.compile(r'\(= \(distance (\w+)\s+(\w+)\)\s+(\d+)\)')
     for m in distance_pattern.finditer(pddl_text):
-        city1 = m.group(1)
-        city2 = m.group(2)
+        city1 = m.group(1)  # e.g., "city0"
+        city2 = m.group(2)  # e.g., "city1"
         dist = int(m.group(3))
         m1 = re.search(r'city(\d+)', city1)
         m2 = re.search(r'city(\d+)', city2)
         if m1 and m2:
-            key = (int(m1.group(1)), int(m2.group(1)))
-            distances[f"{key[0]}-{key[1]}"] = dist
+            key = f"{int(m1.group(1))}-{int(m2.group(1))}"
+            distances[key] = dist
     state["distances"] = distances
 
     # --- Extract Global Metrics ---
@@ -93,7 +117,41 @@ def extract_pddl_state(pddl_text):
     time_match = total_time_pattern.search(pddl_text)
     state["total_fuel_used"] = int(fuel_match.group(1)) if fuel_match else 0
     state["total_time"] = float(time_match.group(1)) if time_match else 0.0
-    
+
+       # --- Extract Goal Conditions for Airplanes and Persons ---
+    goal_airplane_pattern = re.compile(r'\(located\s+(plane\d+)\s+(city\d+)\)', re.IGNORECASE)
+    goal_person_pattern = re.compile(r'\(located\s+(person\d+)\s+(city\d+)\)', re.IGNORECASE)
+
+    goal_airplanes = {}
+    for match in goal_airplane_pattern.finditer(goal_section):
+        plane_idx = int(re.search(r'\d+', match.group(1)).group())
+        city_idx = int(re.search(r'\d+', match.group(2)).group())
+        goal_airplanes[plane_idx] = city_idx
+
+    goal_persons = {}
+    for match in goal_person_pattern.finditer(goal_section):
+        person_idx = int(re.search(r'\d+', match.group(1)).group())
+        city_idx = int(re.search(r'\d+', match.group(2)).group())
+        goal_persons[person_idx] = city_idx
+
+    # --- Extract the Metric ---
+    # This regex assumes the metric is formatted as in:
+    # (:metric minimize (+ (* 3 (total-time)) (* 4 (total-fuel-used))))
+    metric_match = re.search(r'\(:metric\s+(minimize)\s+(\(.*\))\)', pddl_text, re.DOTALL)
+    if metric_match:
+        metric_type = metric_match.group(1)
+        metric_expression = metric_match.group(2).strip()
+        metric = {"type": metric_type, "expression": metric_expression}
+    else:
+        metric = None
+
+    # --- Build the goal output only ---
+    state["goal"] = {
+        "airplanes": goal_airplanes,
+        "persons": goal_persons,
+        "metric": metric
+    }
+
     return state
 
 def custom_dumps(obj, indent=1, level=0):
@@ -103,7 +161,6 @@ def custom_dumps(obj, indent=1, level=0):
         items = []
         for key, value in obj.items():
             if key == "airplanes":
-                # Dump airplanes value compactly.
                 compact = json.dumps(value, separators=(',', ':'))
                 items.append(f'{space}"{key}": {compact}')
             else:
@@ -111,7 +168,6 @@ def custom_dumps(obj, indent=1, level=0):
         inner = ",\n".join(items)
         return "{\n" + inner + "\n" + space + "}"
     elif isinstance(obj, list):
-        # For lists, dump each element recursively.
         items = [custom_dumps(item, indent, level+1) for item in obj]
         inner = ",\n".join(" " * (indent * (level+1)) + item for item in items)
         return "[\n" + inner + "\n" + " " * (indent * level) + "]"
@@ -128,7 +184,6 @@ def convert_all_pddl_to_json(input_dir, output_dir):
         base_name = os.path.basename(file_path)
         json_file = os.path.splitext(base_name)[0] + ".json"
         json_path = os.path.join(output_dir, json_file)
-        # Use our custom_dumps function
         with open(json_path, 'w') as f:
             f.write(custom_dumps(state, indent=1))
         print(f"Converted {file_path} -> {json_path}")

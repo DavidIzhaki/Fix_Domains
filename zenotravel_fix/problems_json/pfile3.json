@@ -1,6 +1,12 @@
 {
 "num_cities": 3,
 "airplanes": {"2":[[4,350],[10,700],[9074,3624],[2,2]],"1":[[3,400],[7,800],[8873,2328],[0,8]]},
+"persons": {
+ "1": 0,
+ "2": 0,
+ "3": 1,
+ "4": 1
+ },
 "distances": {
  "0-0": 0,
  "0-1": 750,
@@ -13,5 +19,18 @@
  "2-2": 0
  },
 "total_fuel_used": 0,
-"total_time": 0.0
+"total_time": 0.0,
+"goal": {
+ "airplanes": {"2":2},
+ "persons": {
+  "1": 1,
+  "2": 0,
+  "3": 0,
+  "4": 1
+  },
+ "metric": {
+  "type": "minimize",
+  "expression": "(+ (* 1 (total-time)) (* 1 (total-fuel-used))))"
+  }
+ }
 }
