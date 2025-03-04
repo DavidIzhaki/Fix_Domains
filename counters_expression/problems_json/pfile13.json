@@ -65,5 +65,6 @@
         "condition29": "(c28 + 1) <= c29",
         "condition30": "(c29 + 1) <= c30",
         "condition31": "(c30 + 1) <= c31"
-    }
+    },
+    "max_value": 64
 }

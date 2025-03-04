@@ -57,5 +57,6 @@
         "condition25": "(c24 + 1) <= c25",
         "condition26": "(c25 + 1) <= c26",
         "condition27": "(c26 + 1) <= c27"
-    }
+    },
+    "max_value": 56
 }

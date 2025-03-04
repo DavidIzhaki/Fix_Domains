@@ -4,8 +4,17 @@ import json
 import argparse
 
 def parse_pddl(pddl_text):
-    result = {"Counters": {}, "Goal": {}}
+    result = {"Counters": {}, "Goal": {}, "max_value": None}
     
+    # Extract max_value from the init section.
+    # Matches lines like: (= (max_int) 24)
+    max_pattern = re.compile(r'\(=\s+\(max_int\)\s+(\d+)\)')
+    max_match = max_pattern.search(pddl_text)
+    if max_match:
+        result["max_value"] = int(max_match.group(1))
+    else:
+        result["max_value"] = 48  # default value if not found
+
     # Extract counters from the init section.
     # Matches lines like: (= (value c0) 19)
     counter_pattern = re.compile(r'\(=\s+\(value\s+(c\d+)\)\s+(\d+)\)')
@@ -85,8 +94,8 @@ def convert_directory(input_dir, output_dir):
             convert_file(input_filepath, output_filepath)
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="Convert linear PDDL problems to JSON")
-    parser.add_argument("--input_dir", help="Directory containing the PDDL files")
-    parser.add_argument("--output_dir", help="Directory to store the JSON files")
+    parser = argparse.ArgumentParser(description="Convert linear PDDL problems to JSON including max_value")
+    parser.add_argument("--input_dir", help="Directory containing the PDDL files", required=True)
+    parser.add_argument("--output_dir", help="Directory to store the JSON files", required=True)
     args = parser.parse_args()
     convert_directory(args.input_dir, args.output_dir)

@@ -49,5 +49,6 @@
         "condition21": "c20 + 1 <= c21",
         "condition22": "c21 + 1 <= c22",
         "condition23": "c22 + 1 <= c23"
-    }
+    },
+    "max_value": 48
 }

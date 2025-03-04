@@ -73,5 +73,6 @@
         "condition33": "c32 + 1 <= c33",
         "condition34": "c33 + 1 <= c34",
         "condition35": "c34 + 1 <= c35"
-    }
+    },
+    "max_value": 72
 }
