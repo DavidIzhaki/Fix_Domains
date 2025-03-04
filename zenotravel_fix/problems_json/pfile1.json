@@ -1,34 +1,56 @@
 {
-"num_cities": 3,
-"airplanes": {"1":[[4,400],[15,800],[6000,4000],[0,8]]},
-"persons": {
- "1": 2,
- "2": 1,
- "3": 2
- },
-"distances": {
- "0-0": 0,
- "0-1": 678,
- "0-2": 775,
- "1-0": 678,
- "1-1": 0,
- "1-2": 810,
- "2-0": 775,
- "2-1": 810,
- "2-2": 0
- },
-"total_fuel_used": 0,
-"total_time": 0.0,
-"goal": {
- "airplanes": {},
- "persons": {
-  "1": 2,
-  "2": 1,
-  "3": 2
+ "num_cities": 3,
+ "airplanes": [
+  {
+   "index": 0,
+   "slow_burn": 4,
+   "slow_speed": 400,
+   "fast_burn": 15,
+   "fast_speed": 800,
+   "capacity": 6000,
+   "fuel": 4000,
+   "location": 0,
+   "zoom_limit": 8,
+   "onboard": 0
+  }
+ ],
+ "persons": [
+  {
+   "loc": 2,
+   "on_airpane": -1
   },
- "metric": {
-  "type": "minimize",
-  "expression": "(total-fuel-used)"
+  {
+   "loc": 1,
+   "on_airpane": -1
+  },
+  {
+   "loc": 2,
+   "on_airpane": -1
+  }
+ ],
+ "distances": {
+  "0-0": 0,
+  "0-1": 678,
+  "0-2": 775,
+  "1-0": 678,
+  "1-1": 0,
+  "1-2": 810,
+  "2-0": 775,
+  "2-1": 810,
+  "2-2": 0
+ },
+ "total_fuel_used": 0,
+ "total_time": 0.0,
+ "goal": {
+  "airplanes": {},
+  "persons": {
+   "1": 2,
+   "2": 1,
+   "3": 2
+  },
+  "metric": {
+   "type": "minimize",
+   "expression": "(total-fuel-used)"
   }
  }
 }

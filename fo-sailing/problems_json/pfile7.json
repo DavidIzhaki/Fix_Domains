@@ -1,0 +1,40 @@
+{
+    "boats": [
+        {
+            "x": -7.0,
+            "y": 0.0,
+            "v": 1.0,
+            "index": 0
+        }
+    ],
+    "persons": [
+        {
+            "d": -370.0,
+            "saved": false,
+            "index": 0
+        },
+        {
+            "d": -58.0,
+            "saved": false,
+            "index": 1
+        },
+        {
+            "d": 63.0,
+            "saved": false,
+            "index": 2
+        },
+        {
+            "d": 483.0,
+            "saved": false,
+            "index": 3
+        }
+    ],
+    "goal": {
+        "saved_persons": [
+            0,
+            1,
+            2,
+            3
+        ]
+    }
+}
