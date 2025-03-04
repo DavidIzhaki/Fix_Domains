@@ -108,7 +108,7 @@ def parse_pddl(file_content):
                 if obj not in result["plants"]:
                     index = int(re.search(r"\d+", obj).group())
                     result["plants"][obj] = {"index": index, "x": None, "y": None, "poured": None}
-                result["plants"][obj]["poured"] = value
+                result["plants"][obj]["poured"] = 0
         # Process carrying and max_carry for agents.
         elif predicate == "carrying":
             if obj.startswith("agent"):

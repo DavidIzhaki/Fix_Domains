@@ -26,43 +26,43 @@
             "index": 1,
             "x": 8,
             "y": 12,
-            "poured": 8
+            "poured": 0
         },
         "plant2": {
             "index": 2,
             "x": 7,
             "y": 1,
-            "poured": 7
+            "poured": 0
         },
         "plant3": {
             "index": 3,
             "x": 8,
             "y": 8,
-            "poured": 9
+            "poured": 0
         },
         "plant4": {
             "index": 4,
             "x": 12,
             "y": 13,
-            "poured": 7
+            "poured": 0
         },
         "plant5": {
             "index": 5,
             "x": 1,
             "y": 5,
-            "poured": 4
+            "poured": 0
         },
         "plant6": {
             "index": 6,
             "x": 2,
             "y": 13,
-            "poured": 5
+            "poured": 0
         },
         "plant7": {
             "index": 7,
             "x": 1,
             "y": 7,
-            "poured": 7
+            "poured": 0
         }
     },
     "max_x": 15,
