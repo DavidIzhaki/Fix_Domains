@@ -1,0 +1,86 @@
+{
+    "water-amount": 40,
+    "tap": {
+        "name": "tap1",
+        "x": 12,
+        "y": 10
+    },
+    "robots": {
+        "agent1": {
+            "index": 1,
+            "x": 2,
+            "y": 10,
+            "max_carry": 5,
+            "carry": 0
+        },
+        "agent2": {
+            "index": 2,
+            "x": 2,
+            "y": 1,
+            "max_carry": 5,
+            "carry": 0
+        }
+    },
+    "plants": {
+        "plant1": {
+            "index": 1,
+            "x": 9,
+            "y": 10,
+            "poured": 4
+        },
+        "plant2": {
+            "index": 2,
+            "x": 10,
+            "y": 9,
+            "poured": 5
+        },
+        "plant3": {
+            "index": 3,
+            "x": 7,
+            "y": 6,
+            "poured": 3
+        },
+        "plant4": {
+            "index": 4,
+            "x": 1,
+            "y": 6,
+            "poured": 9
+        },
+        "plant5": {
+            "index": 5,
+            "x": 3,
+            "y": 1,
+            "poured": 4
+        },
+        "plant6": {
+            "index": 6,
+            "x": 12,
+            "y": 12,
+            "poured": 2
+        },
+        "plant7": {
+            "index": 7,
+            "x": 3,
+            "y": 5,
+            "poured": 10
+        }
+    },
+    "max_x": 12,
+    "max_y": 12,
+    "min_x": 1,
+    "min_y": 1,
+    "goal": {
+        "plant_goals": {
+            "plant1": 4,
+            "plant2": 5,
+            "plant3": 3,
+            "plant4": 9,
+            "plant5": 4,
+            "plant6": 2,
+            "plant7": 10
+        },
+        "other_goals": [
+            "(= (total_poured) (total_loaded)"
+        ]
+    }
+}

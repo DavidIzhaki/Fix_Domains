@@ -1,0 +1,142 @@
+{
+    "water-amount": 83,
+    "tap": {
+        "name": "tap1",
+        "x": 7,
+        "y": 8
+    },
+    "robots": {
+        "agent1": {
+            "index": 1,
+            "x": 3,
+            "y": 4,
+            "max_carry": 5,
+            "carry": 0
+        },
+        "agent2": {
+            "index": 2,
+            "x": 7,
+            "y": 7,
+            "max_carry": 5,
+            "carry": 0
+        }
+    },
+    "plants": {
+        "plant1": {
+            "index": 1,
+            "x": 10,
+            "y": 8,
+            "poured": 4
+        },
+        "plant2": {
+            "index": 2,
+            "x": 6,
+            "y": 2,
+            "poured": 3
+        },
+        "plant3": {
+            "index": 3,
+            "x": 2,
+            "y": 6,
+            "poured": 6
+        },
+        "plant4": {
+            "index": 4,
+            "x": 3,
+            "y": 5,
+            "poured": 1
+        },
+        "plant5": {
+            "index": 5,
+            "x": 8,
+            "y": 3,
+            "poured": 10
+        },
+        "plant6": {
+            "index": 6,
+            "x": 1,
+            "y": 1,
+            "poured": 10
+        },
+        "plant7": {
+            "index": 7,
+            "x": 5,
+            "y": 8,
+            "poured": 1
+        },
+        "plant8": {
+            "index": 8,
+            "x": 4,
+            "y": 1,
+            "poured": 10
+        },
+        "plant9": {
+            "index": 9,
+            "x": 12,
+            "y": 4,
+            "poured": 10
+        },
+        "plant10": {
+            "index": 10,
+            "x": 12,
+            "y": 7,
+            "poured": 7
+        },
+        "plant11": {
+            "index": 11,
+            "x": 8,
+            "y": 6,
+            "poured": 2
+        },
+        "plant12": {
+            "index": 12,
+            "x": 1,
+            "y": 10,
+            "poured": 8
+        },
+        "plant13": {
+            "index": 13,
+            "x": 8,
+            "y": 12,
+            "poured": 1
+        },
+        "plant14": {
+            "index": 14,
+            "x": 1,
+            "y": 12,
+            "poured": 2
+        },
+        "plant15": {
+            "index": 15,
+            "x": 11,
+            "y": 1,
+            "poured": 1
+        }
+    },
+    "max_x": 12,
+    "max_y": 12,
+    "min_x": 1,
+    "min_y": 1,
+    "goal": {
+        "plant_goals": {
+            "plant1": 4,
+            "plant2": 3,
+            "plant3": 6,
+            "plant4": 1,
+            "plant5": 10,
+            "plant6": 10,
+            "plant7": 1,
+            "plant8": 10,
+            "plant9": 10,
+            "plant10": 7,
+            "plant11": 2,
+            "plant12": 8,
+            "plant13": 1,
+            "plant14": 2,
+            "plant15": 1
+        },
+        "other_goals": [
+            "(= (total_poured) (total_loaded)"
+        ]
+    }
+}
