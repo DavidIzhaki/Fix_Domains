@@ -96,5 +96,6 @@
         "condition16": "(c15 + 1) <= c16",
         "condition17": "(c16 + 1) <= c17",
         "condition18": "(c17 + 1) <= c18"
-    }
+    },
+    "max_value": 38
 }

@@ -86,5 +86,6 @@
         "condition14": "c13+1 <= c14",
         "condition15": "c14+1 <= c15",
         "condition16": "c15+1 <= c16"
-    }
+    },
+    "max_value": 34
 }

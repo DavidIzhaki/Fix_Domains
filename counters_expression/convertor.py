@@ -88,8 +88,17 @@ def extract_goal_block(text):
     return text[start:end]
 
 def parse_pddl(pddl_text):
-    result = {"Counters": {}, "Goal": {}}
+    result = {"Counters": {}, "Goal": {}, "max_value": None}
     
+    # Extract max_value from the init section.
+    # Matches lines like: (= (max_int) 24)
+    max_pattern = re.compile(r'\(=\s+\(max_int\)\s+(\d+)\)')
+    max_match = max_pattern.search(pddl_text)
+    if max_match:
+        result["max_value"] = int(max_match.group(1))
+    else:
+        result["max_value"] = 48  # default value if not found
+
     # Extract counters from the init section.
     # Matches lines like: (= (value c0) 19)
     init_pattern = re.compile(r'\(=\s+\(value\s+(c\d+)\)\s+(\d+)\)')
@@ -145,7 +154,6 @@ def convert_file(input_filepath, output_filepath):
 def convert_directory(input_dir, output_dir):
     if not os.path.isdir(output_dir):
         os.makedirs(output_dir)
-    # Process only .pddl files in the input directory.
     for filename in os.listdir(input_dir):
         if filename.endswith(".pddl"):
             input_filepath = os.path.join(input_dir, filename)
@@ -154,7 +162,7 @@ def convert_directory(input_dir, output_dir):
             convert_file(input_filepath, output_filepath)
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Convert PDDL files to JSON format with expression support")
+    parser = argparse.ArgumentParser(description="Convert PDDL files to JSON format with expression support and max_value")
     parser.add_argument("--input_dir", required=True, help="Directory containing the PDDL files")
     parser.add_argument("--output_dir", required=True, help="Directory to store the JSON files")
     args = parser.parse_args()

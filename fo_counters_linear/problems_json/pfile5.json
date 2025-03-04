@@ -31,5 +31,6 @@
         "condition3": "c2+1 <= c3",
         "condition4": "c3+1 <= c4",
         "condition5": "c4+1 <= c5"
-    }
+    },
+    "max_value": 12
 }

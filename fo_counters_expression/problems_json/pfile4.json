@@ -26,5 +26,6 @@
         "condition2": "(c1 + 1) <= c2",
         "condition3": "(c2 + 1) <= c3",
         "condition4": "(c3 + 1) <= c4"
-    }
+    },
+    "max_value": 10
 }

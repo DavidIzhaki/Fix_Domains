@@ -81,5 +81,6 @@
         "condition37": "(c36 + 1) <= c37",
         "condition38": "(c37 + 1) <= c38",
         "condition39": "(c38 + 1) <= c39"
-    }
+    },
+    "max_value": 80
 }

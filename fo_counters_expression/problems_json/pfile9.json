@@ -51,5 +51,6 @@
         "condition7": "(c6 + 1) <= c7",
         "condition8": "(c7 + 1) <= c8",
         "condition9": "(c8 + 1) <= c9"
-    }
+    },
+    "max_value": 20
 }

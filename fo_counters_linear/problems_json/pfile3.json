@@ -21,5 +21,6 @@
         "condition1": "c0+1 <= c1",
         "condition2": "c1+1 <= c2",
         "condition3": "c2+1 <= c3"
-    }
+    },
+    "max_value": 8
 }

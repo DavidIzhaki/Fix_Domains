@@ -81,5 +81,6 @@
         "condition13": "(c12 + 1) <= c13",
         "condition14": "(c13 + 1) <= c14",
         "condition15": "(c14 + 1) <= c15"
-    }
+    },
+    "max_value": 32
 }

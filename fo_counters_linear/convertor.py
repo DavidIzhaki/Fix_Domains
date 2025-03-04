@@ -4,15 +4,24 @@ import json
 import argparse
 
 def parse_pddl(pddl_text):
-    result = {"Counters": {}, "Goal": {}}
+    result = {"Counters": {}, "Goal": {}, "max_value": None}
     
+    # Extract max_value from the init section.
+    # Matches lines like: (= (max_int) 24)
+    max_pattern = re.compile(r'\(=\s+\(max_int\)\s+(\d+)\)')
+    max_match = max_pattern.search(pddl_text)
+    if max_match:
+        result["max_value"] = int(max_match.group(1))
+    else:
+        result["max_value"] = 48  # default value if not found
+
     # Extract counter values from the init section.
     # Matches lines like: (= (value c0) 19)
     value_pattern = re.compile(r'\(=\s+\(value\s+(c\d+)\)\s+(\d+)\)')
     for match in value_pattern.finditer(pddl_text):
         counter_name = match.group(1)  # e.g., "c0"
         value = int(match.group(2))
-        # Use the number part as key and store in a dictionary.
+        # Store counter as an object with a "value" field.
         result["Counters"][counter_name[1:]] = {"value": value}
     
     # Extract rate_value from the init section.
@@ -21,10 +30,10 @@ def parse_pddl(pddl_text):
     for match in rate_pattern.finditer(pddl_text):
         counter_name = match.group(1)  # e.g., "c0"
         rate_value = int(match.group(2))
-        # If the counter hasn't been seen yet, create its dictionary.
-        if counter_name[1:] not in result["Counters"]:
-            result["Counters"][counter_name[1:]] = {}
-        result["Counters"][counter_name[1:]]["rate_value"] = rate_value
+        key = counter_name[1:]
+        if key not in result["Counters"]:
+            result["Counters"][key] = {}
+        result["Counters"][key]["rate_value"] = rate_value
 
     # Extract goal conditions.
     # This regex finds conditions of the form:
@@ -56,7 +65,6 @@ def convert_file(input_filepath, output_filepath):
 def convert_directory(input_dir, output_dir):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
-    # Process only .pddl files.
     for filename in os.listdir(input_dir):
         if filename.endswith(".pddl"):
             input_filepath = os.path.join(input_dir, filename)
@@ -65,7 +73,7 @@ def convert_directory(input_dir, output_dir):
             convert_file(input_filepath, output_filepath)
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="Convert fo_counters PDDL files (with rate_value) to JSON (Linear Domain)")
+    parser = argparse.ArgumentParser(description="Convert fo_counters PDDL files (with rate_value) to JSON (Linear Domain) including max_value")
     parser.add_argument("--input_dir", help="Directory containing the PDDL files", required=True)
     parser.add_argument("--output_dir", help="Directory to store the JSON files", required=True)
     args = parser.parse_args()

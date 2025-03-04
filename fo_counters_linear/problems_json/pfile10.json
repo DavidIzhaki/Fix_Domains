@@ -56,5 +56,6 @@
         "condition8": "c7+1 <= c8",
         "condition9": "c8+1 <= c9",
         "condition10": "c9+1 <= c10"
-    }
+    },
+    "max_value": 22
 }

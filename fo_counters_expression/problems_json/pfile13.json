@@ -71,5 +71,6 @@
         "condition11": "(c10 + 1) <= c11",
         "condition12": "(c11 + 1) <= c12",
         "condition13": "(c12 + 1) <= c13"
-    }
+    },
+    "max_value": 28
 }

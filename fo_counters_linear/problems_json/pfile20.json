@@ -106,5 +106,6 @@
         "condition18": "c17+1 <= c18",
         "condition19": "c18+1 <= c19",
         "condition20": "c19+1 <= c20"
-    }
+    },
+    "max_value": 42
 }

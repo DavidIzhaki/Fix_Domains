@@ -88,22 +88,31 @@ def extract_goal_block(text):
     return text[start:end]
 
 def parse_pddl(pddl_text):
-    result = {"Counters": {}, "Goal": {}}
+    result = {"Counters": {}, "Goal": {}, "max_value": None}
     
+    # Extract max_value from the init section.
+    # Matches lines like: (= (max_int) 24)
+    max_pattern = re.compile(r'\(=\s+\(max_int\)\s+(\d+)\)')
+    max_match = max_pattern.search(pddl_text)
+    if max_match:
+        result["max_value"] = int(max_match.group(1))
+    else:
+        result["max_value"] = 48  # default value if not found
+
     # Extract counter values from the init section.
     # Matches lines like: (= (value c0) 19)
     value_pattern = re.compile(r'\(=\s+\(value\s+(c\d+)\)\s+(\d+)\)')
     for match in value_pattern.finditer(pddl_text):
         counter_name = match.group(1)  # e.g., "c0"
         value = int(match.group(2))
-        # Store the value in an object.
+        # Store the counter as an object with a "value" field.
         result["Counters"][counter_name[1:]] = {"value": value}
     
-    # Extract rate values from the init section.
+    # Extract rate_value from the init section.
     # Matches lines like: (= (rate_value c0) 0)
     rate_pattern = re.compile(r'\(=\s+\(rate_value\s+(c\d+)\)\s+(\d+)\)')
     for match in rate_pattern.finditer(pddl_text):
-        counter_name = match.group(1)
+        counter_name = match.group(1)  # e.g., "c0"
         rate = int(match.group(2))
         key = counter_name[1:]
         if key not in result["Counters"]:
@@ -155,7 +164,6 @@ def convert_file(input_filepath, output_filepath):
 def convert_directory(input_dir, output_dir):
     if not os.path.isdir(output_dir):
         os.makedirs(output_dir)
-    # Process only .pddl files in the input directory.
     for filename in os.listdir(input_dir):
         if filename.endswith(".pddl"):
             input_filepath = os.path.join(input_dir, filename)
@@ -164,7 +172,7 @@ def convert_directory(input_dir, output_dir):
             convert_file(input_filepath, output_filepath)
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Convert PDDL files to JSON format with expression support (including rate_value)")
+    parser = argparse.ArgumentParser(description="Convert PDDL files to JSON format with expression support (including rate_value and max_value)")
     parser.add_argument("--input_dir", required=True, help="Directory containing the PDDL files")
     parser.add_argument("--output_dir", required=True, help="Directory to store the JSON files")
     args = parser.parse_args()
