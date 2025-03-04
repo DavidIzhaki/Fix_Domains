@@ -1,0 +1,90 @@
+{
+    "Counters": {
+        "0": {
+            "value": 0,
+            "rate_value": 0
+        },
+        "1": {
+            "value": 0,
+            "rate_value": 0
+        },
+        "2": {
+            "value": 0,
+            "rate_value": 0
+        },
+        "3": {
+            "value": 0,
+            "rate_value": 0
+        },
+        "4": {
+            "value": 0,
+            "rate_value": 0
+        },
+        "5": {
+            "value": 0,
+            "rate_value": 0
+        },
+        "6": {
+            "value": 0,
+            "rate_value": 0
+        },
+        "7": {
+            "value": 0,
+            "rate_value": 0
+        },
+        "8": {
+            "value": 0,
+            "rate_value": 0
+        },
+        "9": {
+            "value": 0,
+            "rate_value": 0
+        },
+        "10": {
+            "value": 0,
+            "rate_value": 0
+        },
+        "11": {
+            "value": 0,
+            "rate_value": 0
+        },
+        "12": {
+            "value": 0,
+            "rate_value": 0
+        },
+        "13": {
+            "value": 0,
+            "rate_value": 0
+        },
+        "14": {
+            "value": 0,
+            "rate_value": 0
+        },
+        "15": {
+            "value": 0,
+            "rate_value": 0
+        },
+        "16": {
+            "value": 0,
+            "rate_value": 0
+        }
+    },
+    "Goal": {
+        "condition1": "c0+1 <= c1",
+        "condition2": "c1+1 <= c2",
+        "condition3": "c2+1 <= c3",
+        "condition4": "c3+1 <= c4",
+        "condition5": "c4+1 <= c5",
+        "condition6": "c5+1 <= c6",
+        "condition7": "c6+1 <= c7",
+        "condition8": "c7+1 <= c8",
+        "condition9": "c8+1 <= c9",
+        "condition10": "c9+1 <= c10",
+        "condition11": "c10+1 <= c11",
+        "condition12": "c11+1 <= c12",
+        "condition13": "c12+1 <= c13",
+        "condition14": "c13+1 <= c14",
+        "condition15": "c14+1 <= c15",
+        "condition16": "c15+1 <= c16"
+    }
+}

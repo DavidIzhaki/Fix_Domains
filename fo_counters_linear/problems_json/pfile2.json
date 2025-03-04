@@ -1,0 +1,20 @@
+{
+    "Counters": {
+        "0": {
+            "value": 0,
+            "rate_value": 0
+        },
+        "1": {
+            "value": 0,
+            "rate_value": 0
+        },
+        "2": {
+            "value": 0,
+            "rate_value": 0
+        }
+    },
+    "Goal": {
+        "condition1": "c0+1 <= c1",
+        "condition2": "c1+1 <= c2"
+    }
+}
