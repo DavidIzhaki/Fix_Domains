@@ -1,0 +1,766 @@
+{
+    "state": {
+        "simples": [
+            {
+                "name": "Wee1",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "SP1",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "RPA",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "pRbp2",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "pRbp1-E2F4p1-DP12",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "pRb-E2F4p1-DP12",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "PCNA",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "m1433",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "HDAC1-p130-E2F4p1-DP12",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "HDAC1",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "gP",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "gE2",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "E2F6-DP12p1",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "E2F4-DP12p1",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "E2F13",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "DMP1",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "C-TAK1",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "CEBP",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "cdk2p1",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "cdk2",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "cdc25C",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "c-Abl",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            }
+        ],
+        "complexes": [
+            {
+                "name": "c-Abl-pRbp2",
+                "available": 0
+            },
+            {
+                "name": "cdk2-cycA-E2F13",
+                "available": 0
+            },
+            {
+                "name": "cdk2p1-cycA-E2F13",
+                "available": 0
+            },
+            {
+                "name": "CEBP-gP",
+                "available": 0
+            },
+            {
+                "name": "CEBP-pRbp2",
+                "available": 0
+            },
+            {
+                "name": "P",
+                "available": 0
+            },
+            {
+                "name": "CEBP-pRbp2-gP",
+                "available": 0
+            },
+            {
+                "name": "DMP1-cycD",
+                "available": 0
+            },
+            {
+                "name": "DMP1-cycDp1",
+                "available": 0
+            },
+            {
+                "name": "E2F6-DP12p1-gE2",
+                "available": 0
+            },
+            {
+                "name": "HDAC1-p107-E2F4-DP12p1",
+                "available": 0
+            },
+            {
+                "name": "HDAC1-p130-E2F4p1-DP12-gE2",
+                "available": 0
+            },
+            {
+                "name": "HDAC1-pRb-E2F4p1-DP12",
+                "available": 0
+            },
+            {
+                "name": "m1433-cdc25Cp2",
+                "available": 0
+            },
+            {
+                "name": "cdc25Cp2",
+                "available": 0
+            },
+            {
+                "name": "p107-E2F4-DP12p1-gE2",
+                "available": 0
+            },
+            {
+                "name": "p107-E2F4-DP12p1",
+                "available": 0
+            },
+            {
+                "name": "PCNA-cycDp1",
+                "available": 0
+            },
+            {
+                "name": "PCNA-cycD",
+                "available": 0
+            },
+            {
+                "name": "cdk2-cycEp1",
+                "available": 0
+            },
+            {
+                "name": "cdk2-cycE",
+                "available": 0
+            },
+            {
+                "name": "cdk2p1-cycEp1",
+                "available": 0
+            },
+            {
+                "name": "cdk2p1-cycE",
+                "available": 0
+            },
+            {
+                "name": "pRb-E2F4p1-DP12-gE2",
+                "available": 0
+            },
+            {
+                "name": "pRbp1-E2F4p1-DP12-gE2",
+                "available": 0
+            },
+            {
+                "name": "RPA-cycA",
+                "available": 0
+            },
+            {
+                "name": "cdk2-cycA",
+                "available": 0
+            },
+            {
+                "name": "cdk2p1-cycA",
+                "available": 0
+            },
+            {
+                "name": "SP1-E2F13-gP",
+                "available": 0
+            },
+            {
+                "name": "SP1-E2F13",
+                "available": 0
+            },
+            {
+                "name": "c-Myc",
+                "available": 0
+            },
+            {
+                "name": "cycA",
+                "available": 0
+            },
+            {
+                "name": "cycD",
+                "available": 0
+            },
+            {
+                "name": "cycDp1",
+                "available": 0
+            },
+            {
+                "name": "cycE",
+                "available": 0
+            },
+            {
+                "name": "cycEp1",
+                "available": 0
+            },
+            {
+                "name": "p19ARF",
+                "available": 0
+            },
+            {
+                "name": "pol",
+                "available": 0
+            },
+            {
+                "name": "SP1-gP",
+                "available": 0
+            },
+            {
+                "name": "SP1-p107-gP",
+                "available": 0
+            },
+            {
+                "name": "SP1-p107p1-gP",
+                "available": 0
+            },
+            {
+                "name": "SP1-p107p1",
+                "available": 0
+            },
+            {
+                "name": "p107p1",
+                "available": 0
+            },
+            {
+                "name": "SP1-p107",
+                "available": 0
+            },
+            {
+                "name": "p107",
+                "available": 0
+            }
+        ],
+        "num_subs": 0
+    },
+    "problem": {
+        "goal": {
+            "conditions": [
+                {
+                    "molecule_1_name": "cdk2p1-cycA",
+                    "molecule_2_name": "pol",
+                    "amount_condition": 7
+                },
+                {
+                    "molecule_1_name": "DMP1-cycDp1",
+                    "molecule_2_name": "p107",
+                    "amount_condition": 5
+                },
+                {
+                    "molecule_1_name": "SP1-p107p1-gP",
+                    "molecule_2_name": "cdk2-cycA-E2F13",
+                    "amount_condition": 6
+                },
+                {
+                    "molecule_1_name": "cycEp1",
+                    "molecule_2_name": "p107-E2F4-DP12p1-gE2",
+                    "amount_condition": 7
+                }
+            ]
+        },
+        "association_reactions": [
+            {
+                "molecule_1_name": "c-Abl",
+                "need_molecule_1": 2,
+                "molecule_2_name": "pRbp2",
+                "need_molecule_2": 1,
+                "molecule_3_name": "c-Abl-pRbp2",
+                "prod": 1
+            },
+            {
+                "molecule_1_name": "cdk2",
+                "need_molecule_1": 2,
+                "molecule_2_name": "cycA",
+                "need_molecule_2": 4,
+                "molecule_3_name": "cdk2-cycA",
+                "prod": 3
+            },
+            {
+                "molecule_1_name": "cdk2-cycA",
+                "need_molecule_1": 4,
+                "molecule_2_name": "E2F13",
+                "need_molecule_2": 3,
+                "molecule_3_name": "cdk2-cycA-E2F13",
+                "prod": 4
+            },
+            {
+                "molecule_1_name": "cdk2",
+                "need_molecule_1": 2,
+                "molecule_2_name": "cycE",
+                "need_molecule_2": 4,
+                "molecule_3_name": "cdk2-cycE",
+                "prod": 3
+            },
+            {
+                "molecule_1_name": "cdk2",
+                "need_molecule_1": 2,
+                "molecule_2_name": "cycEp1",
+                "need_molecule_2": 2,
+                "molecule_3_name": "cdk2-cycEp1",
+                "prod": 4
+            },
+            {
+                "molecule_1_name": "cdk2p1",
+                "need_molecule_1": 2,
+                "molecule_2_name": "cycA",
+                "need_molecule_2": 1,
+                "molecule_3_name": "cdk2p1-cycA",
+                "prod": 3
+            },
+            {
+                "molecule_1_name": "cdk2p1-cycA",
+                "need_molecule_1": 2,
+                "molecule_2_name": "E2F13",
+                "need_molecule_2": 3,
+                "molecule_3_name": "cdk2p1-cycA-E2F13",
+                "prod": 2
+            },
+            {
+                "molecule_1_name": "cdk2p1",
+                "need_molecule_1": 3,
+                "molecule_2_name": "cycE",
+                "need_molecule_2": 2,
+                "molecule_3_name": "cdk2p1-cycE",
+                "prod": 2
+            },
+            {
+                "molecule_1_name": "cdk2p1",
+                "need_molecule_1": 2,
+                "molecule_2_name": "cycEp1",
+                "need_molecule_2": 4,
+                "molecule_3_name": "cdk2p1-cycEp1",
+                "prod": 2
+            },
+            {
+                "molecule_1_name": "CEBP",
+                "need_molecule_1": 2,
+                "molecule_2_name": "gP",
+                "need_molecule_2": 2,
+                "molecule_3_name": "CEBP-gP",
+                "prod": 4
+            },
+            {
+                "molecule_1_name": "CEBP",
+                "need_molecule_1": 3,
+                "molecule_2_name": "pRbp2",
+                "need_molecule_2": 1,
+                "molecule_3_name": "CEBP-pRbp2",
+                "prod": 3
+            },
+            {
+                "molecule_1_name": "CEBP-pRbp2",
+                "need_molecule_1": 1,
+                "molecule_2_name": "gP",
+                "need_molecule_2": 4,
+                "molecule_3_name": "CEBP-pRbp2-gP",
+                "prod": 2
+            },
+            {
+                "molecule_1_name": "DMP1",
+                "need_molecule_1": 4,
+                "molecule_2_name": "cycD",
+                "need_molecule_2": 1,
+                "molecule_3_name": "DMP1-cycD",
+                "prod": 4
+            },
+            {
+                "molecule_1_name": "DMP1",
+                "need_molecule_1": 1,
+                "molecule_2_name": "cycDp1",
+                "need_molecule_2": 2,
+                "molecule_3_name": "DMP1-cycDp1",
+                "prod": 3
+            },
+            {
+                "molecule_1_name": "E2F6-DP12p1",
+                "need_molecule_1": 2,
+                "molecule_2_name": "gE2",
+                "need_molecule_2": 3,
+                "molecule_3_name": "E2F6-DP12p1-gE2",
+                "prod": 2
+            },
+            {
+                "molecule_1_name": "HDAC1",
+                "need_molecule_1": 3,
+                "molecule_2_name": "p107-E2F4-DP12p1",
+                "need_molecule_2": 1,
+                "molecule_3_name": "HDAC1-p107-E2F4-DP12p1",
+                "prod": 3
+            },
+            {
+                "molecule_1_name": "HDAC1-p130-E2F4p1-DP12",
+                "need_molecule_1": 1,
+                "molecule_2_name": "gE2",
+                "need_molecule_2": 2,
+                "molecule_3_name": "HDAC1-p130-E2F4p1-DP12-gE2",
+                "prod": 1
+            },
+            {
+                "molecule_1_name": "HDAC1",
+                "need_molecule_1": 2,
+                "molecule_2_name": "pRb-E2F4p1-DP12",
+                "need_molecule_2": 1,
+                "molecule_3_name": "HDAC1-pRb-E2F4p1-DP12",
+                "prod": 2
+            },
+            {
+                "molecule_1_name": "m1433",
+                "need_molecule_1": 3,
+                "molecule_2_name": "cdc25Cp2",
+                "need_molecule_2": 3,
+                "molecule_3_name": "m1433-cdc25Cp2",
+                "prod": 2
+            },
+            {
+                "molecule_1_name": "p107-E2F4-DP12p1",
+                "need_molecule_1": 1,
+                "molecule_2_name": "gE2",
+                "need_molecule_2": 2,
+                "molecule_3_name": "p107-E2F4-DP12p1-gE2",
+                "prod": 4
+            },
+            {
+                "molecule_1_name": "p107",
+                "need_molecule_1": 2,
+                "molecule_2_name": "E2F4-DP12p1",
+                "need_molecule_2": 4,
+                "molecule_3_name": "p107-E2F4-DP12p1",
+                "prod": 1
+            },
+            {
+                "molecule_1_name": "PCNA",
+                "need_molecule_1": 1,
+                "molecule_2_name": "cycDp1",
+                "need_molecule_2": 2,
+                "molecule_3_name": "PCNA-cycDp1",
+                "prod": 2
+            },
+            {
+                "molecule_1_name": "PCNA",
+                "need_molecule_1": 2,
+                "molecule_2_name": "cycD",
+                "need_molecule_2": 1,
+                "molecule_3_name": "PCNA-cycD",
+                "prod": 3
+            },
+            {
+                "molecule_1_name": "pRb-E2F4p1-DP12",
+                "need_molecule_1": 1,
+                "molecule_2_name": "gE2",
+                "need_molecule_2": 1,
+                "molecule_3_name": "pRb-E2F4p1-DP12-gE2",
+                "prod": 4
+            },
+            {
+                "molecule_1_name": "pRbp1-E2F4p1-DP12",
+                "need_molecule_1": 4,
+                "molecule_2_name": "gE2",
+                "need_molecule_2": 2,
+                "molecule_3_name": "pRbp1-E2F4p1-DP12-gE2",
+                "prod": 2
+            },
+            {
+                "molecule_1_name": "RPA",
+                "need_molecule_1": 1,
+                "molecule_2_name": "cycA",
+                "need_molecule_2": 1,
+                "molecule_3_name": "RPA-cycA",
+                "prod": 2
+            },
+            {
+                "molecule_1_name": "SP1-E2F13",
+                "need_molecule_1": 4,
+                "molecule_2_name": "gP",
+                "need_molecule_2": 1,
+                "molecule_3_name": "SP1-E2F13-gP",
+                "prod": 1
+            },
+            {
+                "molecule_1_name": "SP1",
+                "need_molecule_1": 4,
+                "molecule_2_name": "E2F13",
+                "need_molecule_2": 4,
+                "molecule_3_name": "SP1-E2F13",
+                "prod": 4
+            },
+            {
+                "molecule_1_name": "SP1",
+                "need_molecule_1": 3,
+                "molecule_2_name": "gP",
+                "need_molecule_2": 2,
+                "molecule_3_name": "SP1-gP",
+                "prod": 3
+            },
+            {
+                "molecule_1_name": "SP1-p107",
+                "need_molecule_1": 1,
+                "molecule_2_name": "gP",
+                "need_molecule_2": 2,
+                "molecule_3_name": "SP1-p107-gP",
+                "prod": 2
+            },
+            {
+                "molecule_1_name": "SP1-p107p1",
+                "need_molecule_1": 1,
+                "molecule_2_name": "gP",
+                "need_molecule_2": 2,
+                "molecule_3_name": "SP1-p107p1-gP",
+                "prod": 1
+            },
+            {
+                "molecule_1_name": "SP1",
+                "need_molecule_1": 1,
+                "molecule_2_name": "p107p1",
+                "need_molecule_2": 2,
+                "molecule_3_name": "SP1-p107p1",
+                "prod": 1
+            },
+            {
+                "molecule_1_name": "SP1",
+                "need_molecule_1": 2,
+                "molecule_2_name": "p107",
+                "need_molecule_2": 1,
+                "molecule_3_name": "SP1-p107",
+                "prod": 2
+            }
+        ],
+        "catalyzed_association_reactions": [
+            {
+                "molecule_1_name": "cdc25C",
+                "need_molecule_1": 3,
+                "molecule_2_name": "C-TAK1",
+                "need_molecule_2": 3,
+                "molecule_3_name": "cdc25Cp2",
+                "prod": 2
+            },
+            {
+                "molecule_1_name": "cdk2-cycA",
+                "need_molecule_1": 4,
+                "molecule_2_name": "Wee1",
+                "need_molecule_2": 2,
+                "molecule_3_name": "cdk2p1-cycA",
+                "prod": 2
+            }
+        ],
+        "catalyzed_self_association_reactions": [],
+        "synthesis_reactions": [
+            {
+                "molecule_1_name": "CEBP-gP",
+                "need_molecule_1": 3,
+                "molecule_2_name": "P",
+                "prod": 4
+            },
+            {
+                "molecule_1_name": "CEBP-pRbp2-gP",
+                "need_molecule_1": 2,
+                "molecule_2_name": "P",
+                "prod": 2
+            },
+            {
+                "molecule_1_name": "SP1-E2F13-gP",
+                "need_molecule_1": 3,
+                "molecule_2_name": "c-Myc",
+                "prod": 1
+            },
+            {
+                "molecule_1_name": "SP1-E2F13-gP",
+                "need_molecule_1": 4,
+                "molecule_2_name": "cycA",
+                "prod": 3
+            },
+            {
+                "molecule_1_name": "SP1-E2F13-gP",
+                "need_molecule_1": 3,
+                "molecule_2_name": "cycD",
+                "prod": 4
+            },
+            {
+                "molecule_1_name": "SP1-E2F13-gP",
+                "need_molecule_1": 1,
+                "molecule_2_name": "cycDp1",
+                "prod": 1
+            },
+            {
+                "molecule_1_name": "SP1-E2F13-gP",
+                "need_molecule_1": 2,
+                "molecule_2_name": "cycE",
+                "prod": 2
+            },
+            {
+                "molecule_1_name": "SP1-E2F13-gP",
+                "need_molecule_1": 2,
+                "molecule_2_name": "cycEp1",
+                "prod": 3
+            },
+            {
+                "molecule_1_name": "SP1-E2F13-gP",
+                "need_molecule_1": 1,
+                "molecule_2_name": "p107",
+                "prod": 3
+            },
+            {
+                "molecule_1_name": "SP1-E2F13-gP",
+                "need_molecule_1": 3,
+                "molecule_2_name": "p107p1",
+                "prod": 1
+            },
+            {
+                "molecule_1_name": "SP1-E2F13-gP",
+                "need_molecule_1": 3,
+                "molecule_2_name": "p19ARF",
+                "prod": 4
+            },
+            {
+                "molecule_1_name": "SP1-E2F13-gP",
+                "need_molecule_1": 3,
+                "molecule_2_name": "pol",
+                "prod": 1
+            },
+            {
+                "molecule_1_name": "SP1-gP",
+                "need_molecule_1": 1,
+                "molecule_2_name": "c-Myc",
+                "prod": 2
+            },
+            {
+                "molecule_1_name": "SP1-gP",
+                "need_molecule_1": 4,
+                "molecule_2_name": "cycA",
+                "prod": 1
+            },
+            {
+                "molecule_1_name": "SP1-gP",
+                "need_molecule_1": 3,
+                "molecule_2_name": "cycD",
+                "prod": 3
+            },
+            {
+                "molecule_1_name": "SP1-gP",
+                "need_molecule_1": 2,
+                "molecule_2_name": "cycDp1",
+                "prod": 2
+            },
+            {
+                "molecule_1_name": "SP1-gP",
+                "need_molecule_1": 1,
+                "molecule_2_name": "cycE",
+                "prod": 4
+            },
+            {
+                "molecule_1_name": "SP1-gP",
+                "need_molecule_1": 2,
+                "molecule_2_name": "cycEp1",
+                "prod": 1
+            },
+            {
+                "molecule_1_name": "SP1-gP",
+                "need_molecule_1": 4,
+                "molecule_2_name": "p107",
+                "prod": 3
+            },
+            {
+                "molecule_1_name": "SP1-gP",
+                "need_molecule_1": 2,
+                "molecule_2_name": "p107p1",
+                "prod": 1
+            },
+            {
+                "molecule_1_name": "SP1-gP",
+                "need_molecule_1": 2,
+                "molecule_2_name": "p19ARF",
+                "prod": 3
+            },
+            {
+                "molecule_1_name": "SP1-gP",
+                "need_molecule_1": 3,
+                "molecule_2_name": "pol",
+                "prod": 4
+            }
+        ]
+    }
+}
