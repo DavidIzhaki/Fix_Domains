@@ -1,0 +1,153 @@
+{
+    "bots": [
+        {
+            "location": 0,
+            "load_limit": 4,
+            "current_load": 0,
+            "index": 0,
+            "arms": [
+                {
+                    "is_free": true,
+                    "side": 0
+                },
+                {
+                    "is_free": true,
+                    "side": 1
+                }
+            ]
+        },
+        {
+            "location": 0,
+            "load_limit": 4,
+            "current_load": 0,
+            "index": 1,
+            "arms": [
+                {
+                    "is_free": true,
+                    "side": 0
+                },
+                {
+                    "is_free": true,
+                    "side": 1
+                }
+            ]
+        }
+    ],
+    "items": [
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 0
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 1
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 2
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 3
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 4
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 5
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 6
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 7
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 8
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 9
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 10
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 11
+        }
+    ],
+    "room_connections": {
+        "0": [
+            1,
+            1,
+            2,
+            2
+        ],
+        "1": [
+            0,
+            0
+        ],
+        "2": [
+            0,
+            0
+        ]
+    },
+    "cost": 0,
+    "goal_locations": {
+        "11": 1,
+        "10": 1,
+        "9": 1,
+        "8": 1,
+        "7": 1,
+        "6": 1,
+        "5": 2,
+        "4": 2,
+        "3": 2,
+        "2": 2,
+        "1": 2,
+        "0": 2
+    }
+}
