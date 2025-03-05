@@ -1,0 +1,258 @@
+{
+    "state": {
+        "simples": [
+            {
+                "name": "SP1",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "Raf1",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "pRbp2",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "pRb-E2F4p1-DP12",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "pCAF",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "p300",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "p16",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "p130-E2F5p1-DP12",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "E2F13",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "DMP1",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "Chk1",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "cdk7",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "cdk46p3-cycDp1",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "cdk46p3-cycD",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "cdc25C",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            },
+            {
+                "name": "AP2",
+                "chosen": false,
+                "possible": true,
+                "available": 0
+            }
+        ],
+        "complexes": [
+            {
+                "name": "DMP1p1",
+                "available": 0
+            },
+            {
+                "name": "cdc25Cp2",
+                "available": 0
+            },
+            {
+                "name": "p16-cdk7",
+                "available": 0
+            },
+            {
+                "name": "pCAF-p300",
+                "available": 0
+            },
+            {
+                "name": "pRbp1p2-AP2",
+                "available": 0
+            },
+            {
+                "name": "pRbp2-AP2",
+                "available": 0
+            },
+            {
+                "name": "pRbp1p2",
+                "available": 0
+            },
+            {
+                "name": "Raf1-p130-E2F5p1-DP12",
+                "available": 0
+            },
+            {
+                "name": "Raf1-pRb-E2F4p1-DP12",
+                "available": 0
+            },
+            {
+                "name": "SP1-E2F13",
+                "available": 0
+            }
+        ],
+        "num_subs": 0
+    },
+    "problem": {
+        "goal": {
+            "conditions": [
+                {
+                    "molecule_1_name": "pRbp1p2-AP2",
+                    "molecule_2_name": "pCAF-p300",
+                    "amount_condition": 4
+                }
+            ]
+        },
+        "association_reactions": [
+            {
+                "molecule_1_name": "p16",
+                "need_molecule_1": 4,
+                "molecule_2_name": "cdk7",
+                "need_molecule_2": 3,
+                "molecule_3_name": "p16-cdk7",
+                "prod": 4
+            },
+            {
+                "molecule_1_name": "pCAF",
+                "need_molecule_1": 3,
+                "molecule_2_name": "p300",
+                "need_molecule_2": 1,
+                "molecule_3_name": "pCAF-p300",
+                "prod": 3
+            },
+            {
+                "molecule_1_name": "pRbp1p2",
+                "need_molecule_1": 4,
+                "molecule_2_name": "AP2",
+                "need_molecule_2": 4,
+                "molecule_3_name": "pRbp1p2-AP2",
+                "prod": 4
+            },
+            {
+                "molecule_1_name": "pRbp2",
+                "need_molecule_1": 2,
+                "molecule_2_name": "AP2",
+                "need_molecule_2": 1,
+                "molecule_3_name": "pRbp2-AP2",
+                "prod": 2
+            },
+            {
+                "molecule_1_name": "Raf1",
+                "need_molecule_1": 2,
+                "molecule_2_name": "p130-E2F5p1-DP12",
+                "need_molecule_2": 3,
+                "molecule_3_name": "Raf1-p130-E2F5p1-DP12",
+                "prod": 3
+            },
+            {
+                "molecule_1_name": "Raf1",
+                "need_molecule_1": 4,
+                "molecule_2_name": "pRb-E2F4p1-DP12",
+                "need_molecule_2": 2,
+                "molecule_3_name": "Raf1-pRb-E2F4p1-DP12",
+                "prod": 2
+            },
+            {
+                "molecule_1_name": "SP1",
+                "need_molecule_1": 4,
+                "molecule_2_name": "E2F13",
+                "need_molecule_2": 3,
+                "molecule_3_name": "SP1-E2F13",
+                "prod": 1
+            }
+        ],
+        "catalyzed_association_reactions": [
+            {
+                "molecule_1_name": "cdc25C",
+                "need_molecule_1": 4,
+                "molecule_2_name": "Chk1",
+                "need_molecule_2": 3,
+                "molecule_3_name": "cdc25Cp2",
+                "prod": 1
+            },
+            {
+                "molecule_1_name": "DMP1",
+                "need_molecule_1": 2,
+                "molecule_2_name": "cdk46p3-cycD",
+                "need_molecule_2": 4,
+                "molecule_3_name": "DMP1p1",
+                "prod": 2
+            },
+            {
+                "molecule_1_name": "DMP1",
+                "need_molecule_1": 4,
+                "molecule_2_name": "cdk46p3-cycDp1",
+                "need_molecule_2": 4,
+                "molecule_3_name": "DMP1p1",
+                "prod": 1
+            },
+            {
+                "molecule_1_name": "pRbp2",
+                "need_molecule_1": 3,
+                "molecule_2_name": "cdk46p3-cycDp1",
+                "need_molecule_2": 3,
+                "molecule_3_name": "pRbp1p2",
+                "prod": 1
+            },
+            {
+                "molecule_1_name": "pRbp2",
+                "need_molecule_1": 3,
+                "molecule_2_name": "cdk46p3-cycD",
+                "need_molecule_2": 2,
+                "molecule_3_name": "pRbp1p2",
+                "prod": 3
+            }
+        ],
+        "catalyzed_self_association_reactions": [],
+        "synthesis_reactions": []
+    }
+}
