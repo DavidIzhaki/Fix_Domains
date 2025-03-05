@@ -40,8 +40,8 @@ def parse_pddl(file_content):
       - goal (structured: plant_goals and other_goals)
     """
     result = {
-        "water-amount": None,
-        "tap": {"name": None, "x": None, "y": None},
+       
+        "tap": {"name": None, "x": None, "y": None, "water_amount": None},
         "robots": {},
         "plants": {},
         "max_x": None,
@@ -66,7 +66,7 @@ def parse_pddl(file_content):
     # 2. Extract water reserve (water-amount).
     m = re.search(r"\(=\s*\(water_reserve\)\s+(\d+)\)", file_content)
     if m:
-        result["water-amount"] = int(m.group(1))
+        water_amout = int(m.group(1))
     
     # 3. Use a general regex to capture all assignment lines:
     #    Pattern: (=\s*(<predicate> <object>) <value>)
@@ -139,6 +139,7 @@ def parse_pddl(file_content):
             index += 1
         # Parse the goal block into structured goals.
         result["goal"] = parse_goal(goal_str.strip())
+        result["tap"]["water_amount"]=water_amout
     
     return result
 

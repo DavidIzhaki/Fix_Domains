@@ -1,9 +1,9 @@
 {
-    "water-amount": 100,
     "tap": {
         "name": "tap1",
         "x": 1,
-        "y": 1
+        "y": 1,
+        "water_amount": 100
     },
     "robots": {
         "agent1": {
