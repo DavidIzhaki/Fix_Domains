@@ -1,0 +1,42 @@
+{
+    "state": {
+        "blocks": [
+            {
+                "index": 1,
+                "color_group": 1,
+                "x": 11,
+                "y": 12
+            },
+            {
+                "index": 2,
+                "color_group": 1,
+                "x": 12,
+                "y": 5
+            },
+            {
+                "index": 3,
+                "color_group": 1,
+                "x": 10,
+                "y": 18
+            },
+            {
+                "index": 4,
+                "color_group": 2,
+                "x": 2,
+                "y": 9
+            },
+            {
+                "index": 5,
+                "color_group": 2,
+                "x": 3,
+                "y": 1
+            }
+        ]
+    },
+    "grid": {
+        "max_x": 20,
+        "min_x": 1,
+        "max_y": 20,
+        "min_y": 1
+    }
+}

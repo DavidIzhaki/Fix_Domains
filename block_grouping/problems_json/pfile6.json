@@ -1,0 +1,72 @@
+{
+    "state": {
+        "blocks": [
+            {
+                "index": 1,
+                "color_group": 1,
+                "x": 4,
+                "y": 19
+            },
+            {
+                "index": 2,
+                "color_group": 1,
+                "x": 5,
+                "y": 13
+            },
+            {
+                "index": 3,
+                "color_group": 2,
+                "x": 15,
+                "y": 8
+            },
+            {
+                "index": 4,
+                "color_group": 1,
+                "x": 16,
+                "y": 13
+            },
+            {
+                "index": 5,
+                "color_group": 1,
+                "x": 13,
+                "y": 3
+            },
+            {
+                "index": 6,
+                "color_group": 2,
+                "x": 6,
+                "y": 15
+            },
+            {
+                "index": 7,
+                "color_group": 2,
+                "x": 1,
+                "y": 7
+            },
+            {
+                "index": 8,
+                "color_group": 2,
+                "x": 10,
+                "y": 13
+            },
+            {
+                "index": 9,
+                "color_group": 2,
+                "x": 10,
+                "y": 16
+            },
+            {
+                "index": 10,
+                "color_group": 2,
+                "x": 8,
+                "y": 3
+            }
+        ]
+    },
+    "grid": {
+        "max_x": 20,
+        "min_x": 1,
+        "max_y": 20,
+        "min_y": 1
+    }
+}

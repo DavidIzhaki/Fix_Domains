@@ -1,0 +1,132 @@
+{
+    "state": {
+        "blocks": [
+            {
+                "index": 1,
+                "color_group": 1,
+                "x": 10,
+                "y": 35
+            },
+            {
+                "index": 2,
+                "color_group": 2,
+                "x": 12,
+                "y": 79
+            },
+            {
+                "index": 3,
+                "color_group": 2,
+                "x": 50,
+                "y": 2
+            },
+            {
+                "index": 4,
+                "color_group": 3,
+                "x": 49,
+                "y": 98
+            },
+            {
+                "index": 5,
+                "color_group": 2,
+                "x": 67,
+                "y": 89
+            },
+            {
+                "index": 6,
+                "color_group": 3,
+                "x": 85,
+                "y": 7
+            },
+            {
+                "index": 7,
+                "color_group": 4,
+                "x": 26,
+                "y": 35
+            },
+            {
+                "index": 8,
+                "color_group": 2,
+                "x": 62,
+                "y": 21
+            },
+            {
+                "index": 9,
+                "color_group": 5,
+                "x": 50,
+                "y": 38
+            },
+            {
+                "index": 10,
+                "color_group": 1,
+                "x": 44,
+                "y": 26
+            },
+            {
+                "index": 11,
+                "color_group": 3,
+                "x": 11,
+                "y": 36
+            },
+            {
+                "index": 12,
+                "color_group": 3,
+                "x": 74,
+                "y": 89
+            },
+            {
+                "index": 13,
+                "color_group": 3,
+                "x": 64,
+                "y": 22
+            },
+            {
+                "index": 14,
+                "color_group": 2,
+                "x": 58,
+                "y": 21
+            },
+            {
+                "index": 15,
+                "color_group": 4,
+                "x": 66,
+                "y": 50
+            },
+            {
+                "index": 16,
+                "color_group": 2,
+                "x": 20,
+                "y": 78
+            },
+            {
+                "index": 17,
+                "color_group": 2,
+                "x": 31,
+                "y": 32
+            },
+            {
+                "index": 18,
+                "color_group": 2,
+                "x": 21,
+                "y": 20
+            },
+            {
+                "index": 19,
+                "color_group": 1,
+                "x": 65,
+                "y": 83
+            },
+            {
+                "index": 20,
+                "color_group": 4,
+                "x": 82,
+                "y": 52
+            }
+        ]
+    },
+    "grid": {
+        "max_x": 100,
+        "min_x": 1,
+        "max_y": 100,
+        "min_y": 1
+    }
+}
