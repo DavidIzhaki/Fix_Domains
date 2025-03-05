@@ -1,0 +1,105 @@
+{
+    "bots": [
+        {
+            "location": 0,
+            "load_limit": 4,
+            "current_load": 0,
+            "index": 0,
+            "arms": [
+                {
+                    "is_free": true,
+                    "side": 0
+                },
+                {
+                    "is_free": true,
+                    "side": 1
+                }
+            ]
+        },
+        {
+            "location": 0,
+            "load_limit": 4,
+            "current_load": 0,
+            "index": 1,
+            "arms": [
+                {
+                    "is_free": true,
+                    "side": 0
+                },
+                {
+                    "is_free": true,
+                    "side": 1
+                }
+            ]
+        }
+    ],
+    "items": [
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 0
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 1
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 2
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 3
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 4
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 5
+        }
+    ],
+    "room_connections": {
+        "0": [
+            1,
+            1,
+            2,
+            2
+        ],
+        "1": [
+            0,
+            0
+        ],
+        "2": [
+            0,
+            0
+        ]
+    },
+    "cost": 0,
+    "goal_locations": {
+        "5": 1,
+        "4": 1,
+        "3": 1,
+        "2": 1,
+        "1": 2,
+        "0": 2
+    }
+}

@@ -1,0 +1,265 @@
+{
+    "bots": [
+        {
+            "location": 0,
+            "load_limit": 4,
+            "current_load": 0,
+            "index": 0,
+            "arms": [
+                {
+                    "is_free": true,
+                    "side": 0
+                },
+                {
+                    "is_free": true,
+                    "side": 1
+                }
+            ]
+        },
+        {
+            "location": 0,
+            "load_limit": 4,
+            "current_load": 0,
+            "index": 1,
+            "arms": [
+                {
+                    "is_free": true,
+                    "side": 0
+                },
+                {
+                    "is_free": true,
+                    "side": 1
+                }
+            ]
+        },
+        {
+            "location": 0,
+            "load_limit": 4,
+            "current_load": 0,
+            "index": 2,
+            "arms": [
+                {
+                    "is_free": true,
+                    "side": 0
+                },
+                {
+                    "is_free": true,
+                    "side": 1
+                }
+            ]
+        }
+    ],
+    "items": [
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 0
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 1
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 2
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 3
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 4
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 5
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 6
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 7
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 8
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 9
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 10
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 11
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 12
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 13
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 14
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 15
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 16
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 17
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 18
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 19
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 20
+        },
+        {
+            "location": 0,
+            "weight": 1,
+            "in_arm": -1,
+            "in_tray": -1,
+            "index": 21
+        }
+    ],
+    "room_connections": {
+        "0": [
+            1,
+            1,
+            2,
+            2
+        ],
+        "1": [
+            0,
+            0,
+            3,
+            3
+        ],
+        "2": [
+            0,
+            0,
+            3,
+            3
+        ],
+        "3": [
+            1,
+            1,
+            2,
+            2,
+            4,
+            4
+        ],
+        "4": [
+            3,
+            3
+        ]
+    },
+    "cost": 0,
+    "goal_locations": {
+        "21": 4,
+        "20": 4,
+        "19": 4,
+        "18": 4,
+        "17": 4,
+        "16": 4,
+        "15": 4,
+        "14": 4,
+        "13": 4,
+        "12": 4,
+        "11": 4,
+        "10": 4,
+        "9": 4,
+        "8": 4,
+        "7": 4,
+        "6": 4,
+        "5": 4,
+        "4": 4,
+        "3": 4,
+        "2": 4,
+        "1": 4,
+        "0": 4
+    }
+}
