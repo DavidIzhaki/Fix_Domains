@@ -1,0 +1,102 @@
+{
+    "state": {
+        "blocks": [
+            {
+                "index": 1,
+                "color_group": 1,
+                "x": 8,
+                "y": 3
+            },
+            {
+                "index": 2,
+                "color_group": 2,
+                "x": 3,
+                "y": 24
+            },
+            {
+                "index": 3,
+                "color_group": 3,
+                "x": 10,
+                "y": 15
+            },
+            {
+                "index": 4,
+                "color_group": 2,
+                "x": 7,
+                "y": 25
+            },
+            {
+                "index": 5,
+                "color_group": 3,
+                "x": 16,
+                "y": 25
+            },
+            {
+                "index": 6,
+                "color_group": 1,
+                "x": 20,
+                "y": 15
+            },
+            {
+                "index": 7,
+                "color_group": 1,
+                "x": 6,
+                "y": 5
+            },
+            {
+                "index": 8,
+                "color_group": 3,
+                "x": 6,
+                "y": 22
+            },
+            {
+                "index": 9,
+                "color_group": 3,
+                "x": 25,
+                "y": 19
+            },
+            {
+                "index": 10,
+                "color_group": 3,
+                "x": 19,
+                "y": 22
+            },
+            {
+                "index": 11,
+                "color_group": 1,
+                "x": 11,
+                "y": 18
+            },
+            {
+                "index": 12,
+                "color_group": 2,
+                "x": 25,
+                "y": 19
+            },
+            {
+                "index": 13,
+                "color_group": 1,
+                "x": 10,
+                "y": 23
+            },
+            {
+                "index": 14,
+                "color_group": 1,
+                "x": 16,
+                "y": 19
+            },
+            {
+                "index": 15,
+                "color_group": 1,
+                "x": 4,
+                "y": 14
+            }
+        ]
+    },
+    "grid": {
+        "max_x": 25,
+        "min_x": 1,
+        "max_y": 25,
+        "min_y": 1
+    }
+}
