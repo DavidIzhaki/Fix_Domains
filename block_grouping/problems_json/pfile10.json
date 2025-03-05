@@ -123,10 +123,12 @@
             }
         ]
     },
-    "grid": {
-        "max_x": 100,
-        "min_x": 1,
-        "max_y": 100,
-        "min_y": 1
+    "problem": {
+        "grid": {
+            "max_x": 100,
+            "min_x": 1,
+            "max_y": 100,
+            "min_y": 1
+        }
     }
 }

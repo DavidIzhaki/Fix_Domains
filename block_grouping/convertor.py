@@ -75,9 +75,9 @@ def parse_pddl_file(filepath):
         init_section = content[content.find("(:init"):]
 
     # Extract block coordinates (allowing optional spaces)
-    x_coords = {m.group(1): int(m.group(2)) 
+    x_coords = {m.group(1): int(m.group(2))
                 for m in re.finditer(r'\(=\s*\(x\s+(b\d+)\)\s+(\d+)\s*\)', init_section)}
-    y_coords = {m.group(1): int(m.group(2)) 
+    y_coords = {m.group(1): int(m.group(2))
                 for m in re.finditer(r'\(=\s*\(y\s+(b\d+)\)\s+(\d+)\s*\)', init_section)}
 
     # Extract grid boundaries.
@@ -104,7 +104,6 @@ def parse_pddl_file(filepath):
         raise ValueError("Error extracting goal section: " + str(e))
 
     # Remove negative conditions from the goal section.
-    # This regex removes occurrences of (not (<stuff>))
     clean_goal = re.sub(r'\(not\s*\(.*?\)\)', '', goal_section, flags=re.DOTALL)
 
     # Extract equality conditions for x and y coordinates.
@@ -116,10 +115,10 @@ def parse_pddl_file(filepath):
     for m in re.finditer(r'\(=\s*\(y\s+(b\d+)\)\s+\(y\s+(b\d+)\)\s*\)', clean_goal):
         pair = frozenset([m.group(1), m.group(2)])
         y_pairs.add(pair)
-    
+
     # Only consider pairs that appear in both x and y equality conditions.
     common_pairs = x_pairs.intersection(y_pairs)
-    
+
     # Initialize union-find structure for all objects.
     parent = {obj: obj for obj in objects}
     for pair in common_pairs:
@@ -141,12 +140,14 @@ def parse_pddl_file(filepath):
 
     state = {"blocks": blocks_list}
     grid = {"max_x": max_x, "min_x": min_x, "max_y": max_y, "min_y": min_y}
-    return {"state": state, "grid": grid}
+    
+    # Return output with "state" and "problem" keys.
+    return {"state": state, "problem": {"grid": grid}}
 
 def main(input_dir, output_dir):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
-    
+
     for filename in os.listdir(input_dir):
         if filename.endswith('.pddl'):
             filepath = os.path.join(input_dir, filename)
