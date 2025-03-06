@@ -1,0 +1,87 @@
+{
+    "state": {
+        "grid": {
+            "row_size": 6,
+            "col_size": 6,
+            "cells": {}
+        },
+        "horizontalcars": [
+            {
+                "x": 0,
+                "y": 2,
+                "name": "red-car"
+            },
+            {
+                "x": 0,
+                "y": 5,
+                "name": "yellow-car"
+            },
+            {
+                "x": 1,
+                "y": 4,
+                "name": "yellow-special-car"
+            },
+            {
+                "x": 3,
+                "y": 3,
+                "name": "gray-white-car"
+            },
+            {
+                "x": 1,
+                "y": 0,
+                "name": "green-car"
+            }
+        ],
+        "verticalcars": [
+            {
+                "x": 5,
+                "y": 1,
+                "name": "pink-car"
+            },
+            {
+                "x": 4,
+                "y": 1,
+                "name": "blue-car"
+            },
+            {
+                "x": 3,
+                "y": 1,
+                "name": "orange-car"
+            },
+            {
+                "x": 2,
+                "y": 2,
+                "name": "purple-car"
+            },
+            {
+                "x": 0,
+                "y": 3,
+                "name": "green-over-car"
+            }
+        ],
+        "horizontaltrucks": [
+            {
+                "x": 1,
+                "y": 5,
+                "name": "purple-truck"
+            },
+            {
+                "x": 3,
+                "y": 0,
+                "name": "yellow-truck"
+            },
+            {
+                "x": 2,
+                "y": 5,
+                "name": "green-truck"
+            }
+        ],
+        "verticaltrucks": [
+            {
+                "x": 5,
+                "y": 3,
+                "name": "blue-truck"
+            }
+        ]
+    }
+}
