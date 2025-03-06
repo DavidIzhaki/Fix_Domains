@@ -1,218 +1,321 @@
+#!/usr/bin/env python3
 import os
-import glob
 import re
 import json
 import argparse
 
-def extract_pddl_state(pddl_text):
-    state = {}
-    
-    # --- Extract Number of Cities ---
-    city_pattern = re.compile(r'\bcity(\d+)\b')
-    # Extract all numeric city identifiers and count unique ones
-    cities_found = {int(num) for num in city_pattern.findall(pddl_text)}
-    state["num_cities"] = len(cities_found)
-    
-    # --- Patterns for Airplane Attributes ---
-    slow_burn_pattern = re.compile(r'\(= \(slow-burn (\w+)\)\s+(\d+)\)')
-    fast_burn_pattern = re.compile(r'\(= \(fast-burn (\w+)\)\s+(\d+)\)')
-    slow_speed_pattern = re.compile(r'\(= \(slow-speed (\w+)\)\s+(\d+)\)')
-    fast_speed_pattern = re.compile(r'\(= \(fast-speed (\w+)\)\s+(\d+)\)')
-    capacity_pattern = re.compile(r'\(= \(capacity (\w+)\)\s+(\d+)\)')
-    fuel_pattern = re.compile(r'\(= \(fuel (\w+)\)\s+(\d+)\)')
-    zoom_limit_pattern = re.compile(r'\(= \(zoom-limit (\w+)\)\s+(\d+)\)')
-    
-    # --- Dedicated Patterns for Locations ---
-    airplane_pattern = re.compile(r'\(located (plane\d+)\s+(city\d+)\)')
-    
-    def plane_index(name):
-        m = re.search(r'plane(\d+)', name)
-        return int(m.group(1)) if m else None
-    
-    # --- Extract Airplane Attribute Dictionaries ---
-    slow_burns = {m.group(1): int(m.group(2)) for m in slow_burn_pattern.finditer(pddl_text)}
-    fast_burns = {m.group(1): int(m.group(2)) for m in fast_burn_pattern.finditer(pddl_text)}
-    slow_speeds = {m.group(1): int(m.group(2)) for m in slow_speed_pattern.finditer(pddl_text)}
-    fast_speeds = {m.group(1): int(m.group(2)) for m in fast_speed_pattern.finditer(pddl_text)}
-    capacities = {m.group(1): int(m.group(2)) for m in capacity_pattern.finditer(pddl_text)}
-    fuels = {m.group(1): int(m.group(2)) for m in fuel_pattern.finditer(pddl_text)}
-    zoom_limits = {m.group(1): int(m.group(2)) for m in zoom_limit_pattern.finditer(pddl_text)}
-    
-    # --- Extract Initial State `(:init ...)` Section ---
-    init_match = re.search(r'\(:init(.*?)\)\s*(?:\(:goal|\(:metric|\Z)', pddl_text, re.DOTALL)
-    if not init_match:
-        raise ValueError("ERROR: Could not find a properly formatted (:init ...) section in PDDL!")
-    init_section = init_match.group(1)
-    goal_match = re.search(r'\(:goal\s*\(and(.*)\)\s*\)', pddl_text, re.DOTALL)
-    if goal_match:
-        goal_section = goal_match.group(1)
-    else:
-        print("ERROR: Could not find (:goal ...) section in PDDL!")
-        exit(1)
-    
-    # --- Extract Airplane Locations ---
-    airplane_locations = {}
-    for m in airplane_pattern.finditer(init_section):
-        plane_name = m.group(1)  # e.g., "plane1"
-        loc = m.group(2)         # e.g., "city0"
-        m_city = re.search(r'city(\d+)', loc)
-        if m_city:
-            airplane_locations[plane_name] = int(m_city.group(1))
-    
-    # --- Extract Persons ---
-    person_pattern = re.compile(r'\(located\s+(person\d+)\s+(city\d+)\)')
-    persons_dict = {}
-    for m in person_pattern.finditer(init_section):
-        person_name = m.group(1)  # e.g., "person1"
-        city_str = m.group(2)     # e.g., "city4"
-        person_idx = int(person_name.replace("person", ""))
-        city_idx = int(city_str.replace("city", ""))
-        persons_dict[person_idx] = city_idx
-    
-        # --- Combine Airplane Attributes into a vector ---
-    airplanes_list = []
-    # Get all unique plane names from the attribute dictionaries.
-    plane_names = set(slow_burns.keys()) | set(fast_burns.keys()) | set(slow_speeds.keys()) | set(fast_speeds.keys()) | set(capacities.keys()) | set(fuels.keys()) | set(zoom_limits.keys())
-    # Sort plane names by their index to ensure order.
-    for plane in sorted(plane_names, key=lambda p: plane_index(p)):
-        idx = plane_index(plane)
-        if idx is None:
+def remove_comments(text):
+    """Remove lines starting with ';' (PDDL comments)."""
+    return "\n".join(line for line in text.splitlines() if not line.strip().startswith(";"))
+
+def parse_objects(pddl):
+    """
+    Parse the objects block.
+    Captures everything between "(:objects" and "(:init".
+    Returns three dictionaries mapping object names to indices.
+    """
+    objects_match = re.search(r"\(:objects(.*?)\(:init", pddl, re.DOTALL | re.IGNORECASE)
+    if not objects_match:
+        raise ValueError("No :objects block found.")
+    objects_text = objects_match.group(1).strip().rstrip(")")
+    lines = objects_text.splitlines()
+    aircraft = {}
+    persons = {}
+    cities = {}
+    for line in lines:
+        line = line.strip().rstrip(")")
+        if not line or '-' not in line:
             continue
-        # Adjust the index so that planes start at 0.
-        idx = idx - 1  
-        s_burn = slow_burns.get(plane, 0)
-        s_speed = slow_speeds.get(plane, 0)
-        f_burn = fast_burns.get(plane, 0)
-        f_speed = fast_speeds.get(plane, 0)
-        cap = capacities.get(plane, 0)
-        fuel_val = fuels.get(plane, 0)
-        z_limit = zoom_limits.get(plane, 0)
-        loc_index = airplane_locations.get(plane, 0)  # default to 0 if not found
-        # Build the airplane as a dict matching our new Airplane struct.
-        
-        airplanes_list.append({
-            "index": idx,
-            "slow_burn": s_burn,
-            "slow_speed": s_speed,
-            "fast_burn": f_burn,
-            "fast_speed": f_speed,
-            "capacity": cap,
-            "fuel": fuel_val,
-            "location": loc_index,
-            "zoom_limit": z_limit,
-            "onboard": 0  # default onboard count
-        })
+        parts = line.split("-")
+        names_str = parts[0].strip()
+        typ = parts[1].strip().lower()
+        names = names_str.split()
+        if typ == "aircraft":
+            for name in names:
+                if name not in aircraft:
+                    aircraft[name] = len(aircraft)
+        elif typ == "person":
+            for name in names:
+                if name not in persons:
+                    persons[name] = len(persons)
+        elif typ == "city":
+            for name in names:
+                if name not in cities:
+                    cities[name] = len(cities)
+    return aircraft, persons, cities
 
-    
-    state["airplanes"] = airplanes_list
-    
-    # --- Convert Persons Dictionary into a Vector ---
-    persons_list = []
-    for person_idx in sorted(persons_dict.keys()):
-        persons_list.append({
-            "loc": persons_dict[person_idx],
-            "on_airpane": -1  # -1 indicates the person is on the ground
-        })
-    state["persons"] = persons_list
-    
-    # --- Extract Distances ---
+def parse_init(pddl, aircraft, persons, cities):
+    """
+    Parse the init block.
+    Captures everything between "(:init" and "(:goal".
+    Returns:
+      aircraft_info, persons_info, distances, total_fuel_used, total_time.
+    """
+    init_match = re.search(r"\(:init(.*?)\(:goal", pddl, re.DOTALL | re.IGNORECASE)
+    if not init_match:
+        raise ValueError("No :init block found.")
+    init_text = init_match.group(1).strip()
+
+    aircraft_info = { name: {} for name in aircraft }
+    persons_info = { name: {} for name in persons }
     distances = {}
-    distance_pattern = re.compile(r'\(= \(distance (\w+)\s+(\w+)\)\s+(\d+)\)')
-    for m in distance_pattern.finditer(pddl_text):
-        city1 = m.group(1)  # e.g., "city0"
-        city2 = m.group(2)  # e.g., "city1"
-        dist = int(m.group(3))
-        m1 = re.search(r'city(\d+)', city1)
-        m2 = re.search(r'city(\d+)', city2)
-        if m1 and m2:
-            key = f"{int(m1.group(1))}-{int(m2.group(1))}"
-            distances[key] = dist
-    state["distances"] = distances
 
-    # --- Extract Global Metrics ---
-    total_fuel_pattern = re.compile(r'\(= \(total-fuel-used\)\s+(\d+)\)')
-    total_time_pattern = re.compile(r'\(= \(total-time\)\s+([\d\.]+)\)')
-    fuel_match = total_fuel_pattern.search(pddl_text)
-    time_match = total_time_pattern.search(pddl_text)
-    state["total_fuel_used"] = int(fuel_match.group(1)) if fuel_match else 0
-    state["total_time"] = float(time_match.group(1)) if time_match else 0.0
+    # Process "located" predicates.
+    located_re = re.compile(r"\(located\s+(\S+)\s+(\S+)\)", re.IGNORECASE)
+    for match in located_re.finditer(init_text):
+        obj, loc = match.groups()
+        if obj in aircraft and loc in cities:
+            aircraft_info[obj]["location"] = cities[loc]
+        elif obj in persons and loc in cities:
+            persons_info[obj]["loc"] = cities[loc]
+    
+    def num_re(predicate):
+        return re.compile(r"\(=\s*\(" + re.escape(predicate) + r"\s+(\S+)\)\s+(\d+)\)", re.DOTALL | re.IGNORECASE)
+    
+    # Numeric predicates for aircraft.
+    for regex, key in [
+        (num_re("capacity"), "capacity"),
+        (num_re("fuel"), "fuel"),
+        (num_re("slow-burn"), "slow_burn"),
+        (num_re("fast-burn"), "fast_burn"),
+        (num_re("onboard"), "onboard"),
+        (num_re("zoom-limit"), "zoom_limit"),
+        (num_re("slow-speed"), "slow_speed"),
+        (num_re("fast-speed"), "fast_speed")
+    ]:
+        for match in regex.finditer(init_text):
+            plane, value = match.groups()
+            if plane in aircraft_info:
+                aircraft_info[plane][key] = int(value)
+                
+    # Process distances.
+    distance_re = re.compile(r"\(=\s*\(distance\s+(\S+)\s+(\S+)\)\s+(\d+)\)", re.DOTALL | re.IGNORECASE)
+    for match in distance_re.finditer(init_text):
+        city1, city2, dist = match.groups()
+        if city1 in cities and city2 in cities:
+            i1 = cities[city1]
+            i2 = cities[city2]
+            key = f"({i1},{i2})"
+            distances[key] = int(dist)
+    
+    # Process total fuel and total time.
+    total_fuel_re = re.compile(r"\(=\s*\(total-fuel-used\)\s+(\d+)\)", re.DOTALL | re.IGNORECASE)
+    total_time_re = re.compile(r"\(=\s*\(total-time\)\s+(\d+)\)", re.DOTALL | re.IGNORECASE)
+    total_fuel_used = int(total_fuel_re.search(init_text).group(1)) if total_fuel_re.search(init_text) else 0
+    total_time = float(total_time_re.search(init_text).group(1)) if total_time_re.search(init_text) else 0.0
+    
+    # Set defaults if missing.
+    for plane in aircraft_info:
+        if "location" not in aircraft_info[plane]:
+            aircraft_info[plane]["location"] = 0
+        for key in ["capacity", "fuel", "slow_burn", "fast_burn", "onboard", "zoom_limit", "slow_speed", "fast_speed"]:
+            if key not in aircraft_info[plane]:
+                aircraft_info[plane][key] = 0
+    for p in persons_info:
+        if "loc" not in persons_info[p]:
+            persons_info[p]["loc"] = 0
+        persons_info[p]["on_airpane"] = -1
+    
+    return aircraft_info, persons_info, distances, total_fuel_used, total_time
 
-    # --- Extract Goal Conditions for Airplanes and Persons ---
-    goal_airplane_pattern = re.compile(r'\(located\s+(plane\d+)\s+(city\d+)\)', re.IGNORECASE)
-    goal_person_pattern = re.compile(r'\(located\s+(person\d+)\s+(city\d+)\)', re.IGNORECASE)
+def extract_metric_block(pddl):
+    """
+    Extract the complete metric block, balancing parentheses.
+    Returns the full substring starting from "(:metric" up to its matching closing parenthesis.
+    If no metric block is found, returns None.
+    """
+    lower_pddl = pddl.lower()
+    start_index = lower_pddl.find("(:metric")
+    
+    if start_index == -1:
+        return None
+    count = 0
+    end_index = start_index
+    for i, char in enumerate(pddl[start_index:], start=start_index):
+        if char == '(':
+            count += 1
+        elif char == ')':
+            count -= 1
+            if count == 0:
+                end_index = i
+                break
+    return pddl[start_index:end_index+1]
 
-    goal_airplanes = {}
-    for match in goal_airplane_pattern.finditer(goal_section):
-        plane_idx = int(re.search(r'\d+', match.group(1)).group())
-        city_idx = int(re.search(r'\d+', match.group(2)).group())
-        goal_airplanes[plane_idx] = city_idx
+def extract_metric_block(pddl):
+    """
+    Extract the complete metric block, balancing parentheses.
+    Returns the substring from "(:metric" up to its matching closing parenthesis.
+    If no metric block is found, returns None.
+    """
+    lower_pddl = pddl.lower()
+    start_index = lower_pddl.find("(:metric")
+    if start_index == -1:
+        return None
+    count = 0
+    end_index = start_index
+    for i, char in enumerate(pddl[start_index:], start=start_index):
+        if char == '(':
+            count += 1
+        elif char == ')':
+            count -= 1
+            if count == 0:
+                end_index = i
+                break
+    return pddl[start_index:end_index+1]
 
-    goal_persons = {}
-    for match in goal_person_pattern.finditer(goal_section):
-        person_idx = int(re.search(r'\d+', match.group(1)).group())
-        city_idx = int(re.search(r'\d+', match.group(2)).group())
-        goal_persons[person_idx] = city_idx
+def parse_metric(pddl):
+    """
+    Parse the metric block.
+    
+    Recognizes three cases:
+      1. A * total-time           -> returns { "fuel": 0, "time": A }
+      2. A * total-fuel-used      -> returns { "fuel": A, "time": 0 }
+      3. A * total-time + B * total-fuel-used  -> returns { "fuel": B, "time": A }
+      
+    If the metric block uses a keyword without an explicit coefficient, we assume the coefficient is 1.
+    If no metric block is present, defaults to { "fuel": 1, "time": 1 }.
+    """
+    metric_block = extract_metric_block(pddl)
+    if not metric_block:
+        return {"fuel": 1, "time": 1}
 
-    # --- Extract the Metric ---
-    metric_match = re.search(r'\(:metric\s+(minimize)\s+(\(.*\))\)', pddl_text, re.DOTALL)
-    if metric_match:
-        metric_type = metric_match.group(1)
-        metric_expression = metric_match.group(2).strip()
-        metric = {"type": metric_type, "expression": metric_expression}
-    else:
-        metric = None
+    # Look for terms of the form: (* number (total-time)) and (* number (total-fuel-used))
+    time_terms = re.findall(r"\(\*\s*(\d+)\s+\(total-time\)\)", metric_block, re.IGNORECASE)
+    fuel_terms = re.findall(r"\(\*\s*(\d+)\s+\(total-fuel-used\)\)", metric_block, re.IGNORECASE)
 
-    # --- Build the goal output (if you want to keep goal in the JSON) ---
-    state["goal"] = {
-        "airplanes": goal_airplanes,
-        "persons": goal_persons,
-        "metric": metric
+    # If no numeric term is found but the keyword exists, default coefficient to 1.
+    time_coef = int(time_terms[0]) if time_terms else (1 if "total-time" in metric_block.lower() else 0)
+    fuel_coef = int(fuel_terms[0]) if fuel_terms else (1 if "total-fuel-used" in metric_block.lower() else 0)
+
+    return {"fuel": fuel_coef, "time": time_coef}
+
+
+
+
+
+def parse_goal(pddl, aircraft, persons, cities):
+    """
+    Parse the goal block.
+    Splits the PDDL at the metric block (if present) and extracts all "located" predicates.
+    Returns two lists:
+      airplane_goals: list of [aircraft_index, goal_city_index]
+      person_goals: list of [person_index, goal_city_index]
+    """
+    parts = re.split(r"\(:metric", pddl, flags=re.IGNORECASE)
+    goal_section = parts[0]
+    goal_match = re.search(r"\(:goal\s+\(and(.*)\)\s*\)", goal_section, re.DOTALL | re.IGNORECASE)
+    if not goal_match:
+        raise ValueError("No :goal block found.")
+    goal_text = goal_match.group(1).strip()
+    
+    airplane_goals = []
+    person_goals = []
+    located_re = re.compile(r"\(located\s+(\S+)\s+(\S+)\)", re.IGNORECASE)
+    for match in located_re.finditer(goal_text):
+        obj, loc = match.groups()
+        if loc not in cities:
+            continue
+        if obj in aircraft:
+            airplane_goals.append([aircraft[obj], cities[loc]])
+        elif obj in persons:
+            person_goals.append([persons[obj], cities[loc]])
+    return airplane_goals, person_goals
+
+def convert_pddl_to_json(pddl_file_path):
+    """
+    Converts a PDDL file to a JSON structure matching the Rust state format.
+    
+    {
+      "state": {
+         "num_cities": int,
+         "airplanes": [ { Airplane properties }, ... ],
+         "distances": { "(i,j)": distance, ... },
+         "persons": [ { Person properties }, ... ],
+         "total_fuel_used": int,
+         "total_time": float
+      },
+      "problem": {
+         "goal": {
+             "airplanes": [ [aircraft_index, goal_city_index], ... ],
+             "persons": [ [person_index, goal_city_index], ... ]
+         },
+         "minimize": { "fuel": int, "time": int }
+      }
     }
+    """
+    with open(pddl_file_path, "r") as f:
+        pddl_raw = f.read()
+    pddl = remove_comments(pddl_raw)
+    aircraft, persons, cities = parse_objects(pddl)
+    aircraft_info, persons_info, distances, total_fuel_used, total_time = parse_init(pddl, aircraft, persons, cities)
+    num_cities = len(cities)
+    
+    # Build airplanes list (ordered by index).
+    airplanes_list = [None] * len(aircraft)
+    for name, idx in aircraft.items():
+        info = aircraft_info[name]
+        airplanes_list[idx] = {
+            "index": idx,
+            "slow_burn": info["slow_burn"],
+            "slow_speed": info["slow_speed"],
+            "fast_burn": info["fast_burn"],
+            "fast_speed": info["fast_speed"],
+            "capacity": info["capacity"],
+            "fuel": info["fuel"],
+            "location": info["location"],
+            "zoom_limit": info["zoom_limit"],
+            "onboard": info["onboard"]
+        }
+    
+    # Build persons list (ordered by index).
+    persons_list = [None] * len(persons)
+    for name, idx in persons.items():
+        info = persons_info[name]
+        persons_list[idx] = {
+            "loc": info["loc"],
+            "on_airpane": info["on_airpane"]
+        }
+    
+    airplane_goals, person_goals = parse_goal(pddl, aircraft, persons, cities)
+    metric = parse_metric(pddl)
+    
+    json_data = {
+        "state": {
+            "num_cities": num_cities,
+            "airplanes": airplanes_list,
+            "distances": distances,
+            "persons": persons_list,
+            "total_fuel_used": total_fuel_used,
+            "total_time": total_time
+        },
+        "problem": {
+            "goal": {
+                "airplanes": airplane_goals,
+                "persons": person_goals
+            },
+            "minimize": metric
+        }
+    }
+    return json_data
 
-    return state
-
-def custom_dumps(obj, indent=1, level=0):
-    """Custom JSON dumping that prints the 'airplanes' field in compact form."""
-    space = " " * (indent * level)
-    if isinstance(obj, dict):
-        items = []
-        for key, value in obj.items():
-            if key == "airplanes":
-                compact = json.dumps(value, separators=(',', ':'))
-                items.append(f'{space}"{key}": {compact}')
-            else:
-                items.append(f'{space}"{key}": {custom_dumps(value, indent, level+1)}')
-        inner = ",\n".join(items)
-        return "{\n" + inner + "\n" + space + "}"
-    elif isinstance(obj, list):
-        items = [custom_dumps(item, indent, level+1) for item in obj]
-        inner = ",\n".join(" " * (indent * (level+1)) + item for item in items)
-        return "[\n" + inner + "\n" + " " * (indent * level) + "]"
-    else:
-        return json.dumps(obj)
-
-def convert_all_pddl_to_json(input_dir, output_dir):
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
-    for file_path in glob.glob(os.path.join(input_dir, "*.pddl")):
-        with open(file_path, 'r') as f:
-            pddl_text = f.read()
-        state = extract_pddl_state(pddl_text)
-        base_name = os.path.basename(file_path)
-        json_file = os.path.splitext(base_name)[0] + ".json"
-        json_path = os.path.join(output_dir, json_file)
-        with open(json_path, 'w') as f:
-            json.dump(state, f, indent=1)
-        print(f"Converted {file_path} -> {json_path}")
+def main(input_dir, output_dir):
+    os.makedirs(output_dir, exist_ok=True)
+    for filename in os.listdir(input_dir):
+        if filename.lower().endswith(".pddl"):
+            pddl_path = os.path.join(input_dir, filename)
+            try:
+                json_problem = convert_pddl_to_json(pddl_path)
+                out_filename = filename.replace(".pddl", ".json")
+                out_path = os.path.join(output_dir, out_filename)
+                with open(out_path, "w") as out_file:
+                    json.dump(json_problem, out_file, indent=2)
+                print(f"Converted {pddl_path} -> {out_path}")
+            except Exception as e:
+                print(f"Error processing {pddl_path}: {e}")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(
-        description="Convert multiple PDDL problem files to JSON state representation."
-    )
-    parser.add_argument("--input_dir", type=str, required=True,
-                        help="Path to the input directory containing PDDL files.")
-    parser.add_argument("--output_dir", type=str, required=True,
-                        help="Path to the output directory for JSON files.")
+    parser = argparse.ArgumentParser(description="Convert zenotravel PDDL files to JSON format.")
+    parser.add_argument("input_dir", help="Directory containing PDDL files.")
+    parser.add_argument("output_dir", help="Directory to output JSON files.")
     args = parser.parse_args()
-    
-    convert_all_pddl_to_json(args.input_dir, args.output_dir)
+    main(args.input_dir, args.output_dir)
