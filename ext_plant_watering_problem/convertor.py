@@ -4,44 +4,55 @@ import json
 
 def parse_goal(goal_block):
     """
-    Parses the goal block to extract plant goals and other goal conditions.
-    
-    Returns a dictionary with:
-      - "plant_goals": mapping of plant names (e.g., "plant1") to target poured values.
-      - "other_goals": list of additional goal condition strings.
+    Parses the goal block and returns a dictionary matching the Rust Goal struct:
+      {
+          "conditions": [ { "plant_index": int, "poured_amount": int }, ... ],
+          "total_operator": str
+      }
+      
+    It uses a regex that captures conditions with an operator (like =, >=, etc.).
+    For plant goals, we expect a condition of the form:
+        (<operator> (poured plantX) <value>)
+    For the total condition, we expect:
+        (<operator> (total_poured) (total_loaded))
+    If the total condition is not found, total_operator defaults to "=".
     """
-    plant_goals = {}
-    other_goals = []
-    # Find all conditions of the form: (= ( ... ) ... )
-    # This regex captures the inner part of the left-hand side and the right-hand side.
-    conditions = re.findall(r"\(=\s*\(([^)]+)\)\s+([^)]+)\)", goal_block)
-    for lhs, rhs in conditions:
-        parts = lhs.strip().split()
-        # Check if it's a plant goal: predicate "poured" and second part starts with "plant"
-        if len(parts) == 2 and parts[0] == "poured" and parts[1].startswith("plant"):
+    conditions = []
+    total_operator = "="  # default operator
+    
+    # Pattern matches operators: =, >=, <=, >, <, !=
+    # It expects a condition of the form: (<op> (<predicate> <object>?) <rhs>)
+    pattern = re.compile(r"\((=|>=|<=|>|<|!=)\s*\(([^)]+)\)\s+([^)]+)\)")
+    matches = pattern.findall(goal_block)
+    
+    for op, lhs, rhs in matches:
+        lhs_parts = lhs.strip().split()
+        # If it's a plant goal, e.g., (poured plant1) 4
+        if len(lhs_parts) == 2 and lhs_parts[0] == "poured" and lhs_parts[1].startswith("plant"):
             try:
-                plant_goals[parts[1]] = int(rhs)
-            except ValueError:
-                plant_goals[parts[1]] = rhs  # fallback if not numeric
-        else:
-            # Save the full condition as a string in other_goals.
-            condition_str = f"(= ({lhs.strip()}) {rhs.strip()})"
-            other_goals.append(condition_str)
-    return {"plant_goals": plant_goals, "other_goals": other_goals}
+                condition = {
+                    "plant_index": int(re.search(r"\d+", lhs_parts[1]).group()),
+                    "poured_amount": int(rhs)
+                }
+                conditions.append(condition)
+            except (AttributeError, ValueError):
+                # Skip if parsing fails.
+                pass
+        # Check for total condition: (total_poured) (total_loaded)
+        elif lhs.strip() == "total_poured" and rhs.strip() == "total_loaded":
+            total_operator = op
+        # Other conditions can be ignored for now.
+    
+    return {"conditions": conditions, "total_operator": total_operator}
 
 def parse_pddl(file_content):
     """
-    Parse a PDDL problem file content and return a JSON structure with:
-      - water-amount (from water_reserve)
-      - tap (with name, x, and y)
-      - robots (with index, x, y, max_carry, carry)
-      - plants (with index, x, y, poured)
-      - grid boundaries (max_x, min_x, max_y, min_y)
-      - goal (structured: plant_goals and other_goals)
+    Parse a PDDL problem file content and return a JSON structure with two top-level keys:
+      - "state": Contains tap, robots (as a list), plants (as a list), total_poured, total_loaded.
+      - "problem": Contains grid boundaries (max_x, max_y, min_x, min_y) and goal.
     """
-    result = {
-       
-        "tap": {"name": None, "x": None, "y": None, "water_amount": None},
+    temp = {
+        "tap": {"x": None, "y": None, "water_amount": None},
         "robots": {},
         "plants": {},
         "max_x": None,
@@ -61,69 +72,67 @@ def parse_pddl(file_content):
     for key, pattern in boundary_patterns.items():
         m = re.search(pattern, file_content)
         if m:
-            result[key] = int(m.group(1))
+            temp[key] = int(m.group(1))
     
-    # 2. Extract water reserve (water-amount).
+    # 2. Extract water reserve for the tap.
     m = re.search(r"\(=\s*\(water_reserve\)\s+(\d+)\)", file_content)
     if m:
-        water_amout = int(m.group(1))
+        water_amount = int(m.group(1))
+    else:
+        water_amount = 0
     
-    # 3. Use a general regex to capture all assignment lines:
-    #    Pattern: (=\s*(<predicate> <object>) <value>)
+    # 3. Extract all assignment lines.
+    # Expected assignments: (predicate object) value
     assignments = re.findall(r"\(=\s*\((\w+)\s+(\w+)\)\s+(\d+)\)", file_content)
     for predicate, obj, val in assignments:
         value = int(val)
-        # Process x and y coordinates
         if predicate == "x":
             if obj.startswith("plant"):
-                if obj not in result["plants"]:
+                if obj not in temp["plants"]:
                     index = int(re.search(r"\d+", obj).group())
-                    result["plants"][obj] = {"index": index, "x": None, "y": None, "poured": None}
-                result["plants"][obj]["x"] = value
+                    temp["plants"][obj] = {"index": index, "x": None, "y": None, "poured": 0}
+                temp["plants"][obj]["x"] = value
             elif obj.startswith("agent"):
-                if obj not in result["robots"]:
+                if obj not in temp["robots"]:
                     index = int(re.search(r"\d+", obj).group())
-                    result["robots"][obj] = {"index": index, "x": None, "y": None, "max_carry": None, "carry": None}
-                result["robots"][obj]["x"] = value
+                    temp["robots"][obj] = {"index": index, "x": None, "y": None, "max_carry": None, "carry": None}
+                temp["robots"][obj]["x"] = value
             elif obj.startswith("tap"):
-                result["tap"]["name"] = obj
-                result["tap"]["x"] = value
+                temp["tap"]["x"] = value
         elif predicate == "y":
             if obj.startswith("plant"):
-                if obj not in result["plants"]:
+                if obj not in temp["plants"]:
                     index = int(re.search(r"\d+", obj).group())
-                    result["plants"][obj] = {"index": index, "x": None, "y": None, "poured": None}
-                result["plants"][obj]["y"] = value
+                    temp["plants"][obj] = {"index": index, "x": None, "y": None, "poured": 0}
+                temp["plants"][obj]["y"] = value
             elif obj.startswith("agent"):
-                if obj not in result["robots"]:
+                if obj not in temp["robots"]:
                     index = int(re.search(r"\d+", obj).group())
-                    result["robots"][obj] = {"index": index, "x": None, "y": None, "max_carry": None, "carry": None}
-                result["robots"][obj]["y"] = value
+                    temp["robots"][obj] = {"index": index, "x": None, "y": None, "max_carry": None, "carry": None}
+                temp["robots"][obj]["y"] = value
             elif obj.startswith("tap"):
-                result["tap"]["name"] = obj
-                result["tap"]["y"] = value
-        # Process poured amounts for plants.
+                temp["tap"]["y"] = value
         elif predicate == "poured":
             if obj.startswith("plant"):
-                if obj not in result["plants"]:
+                if obj not in temp["plants"]:
                     index = int(re.search(r"\d+", obj).group())
-                    result["plants"][obj] = {"index": index, "x": None, "y": None, "poured": None}
-                result["plants"][obj]["poured"] = 0
-        # Process carrying and max_carry for agents.
+                    temp["plants"][obj] = {"index": index, "x": None, "y": None, "poured": 0}
+                # poured initially 0 (or you can update if needed)
+                temp["plants"][obj]["poured"] = 0
         elif predicate == "carrying":
             if obj.startswith("agent"):
-                if obj not in result["robots"]:
+                if obj not in temp["robots"]:
                     index = int(re.search(r"\d+", obj).group())
-                    result["robots"][obj] = {"index": index, "x": None, "y": None, "max_carry": None, "carry": None}
-                result["robots"][obj]["carry"] = value
+                    temp["robots"][obj] = {"index": index, "x": None, "y": None, "max_carry": None, "carry": None}
+                temp["robots"][obj]["carry"] = value
         elif predicate == "max_carry":
             if obj.startswith("agent"):
-                if obj not in result["robots"]:
+                if obj not in temp["robots"]:
                     index = int(re.search(r"\d+", obj).group())
-                    result["robots"][obj] = {"index": index, "x": None, "y": None, "max_carry": None, "carry": None}
-                result["robots"][obj]["max_carry"] = value
+                    temp["robots"][obj] = {"index": index, "x": None, "y": None, "max_carry": None, "carry": None}
+                temp["robots"][obj]["max_carry"] = value
 
-    # 4. Extract the goal block using a parenthesis counter.
+    # 4. Extract the goal block.
     goal_start = file_content.find("(:goal")
     if goal_start != -1:
         index = goal_start + len("(:goal")
@@ -137,11 +146,31 @@ def parse_pddl(file_content):
             elif char == ")":
                 counter -= 1
             index += 1
-        # Parse the goal block into structured goals.
-        result["goal"] = parse_goal(goal_str.strip())
-        result["tap"]["water_amount"]=water_amout
+        temp["goal"] = parse_goal(goal_str.strip())
     
-    return result
+    # Set water_amount in tap.
+    temp["tap"]["water_amount"] = water_amount
+
+    # 5. Build final JSON structure.
+    # Build the state according to the Rust State struct.
+    state = {
+        "robots": list(temp["robots"].values()),
+        "plants": list(temp["plants"].values()),
+        "tap": temp["tap"],
+        "total_poured": 0,
+        "total_loaded": 0
+    }
+    
+    # Build the problem according to ExtPlantWateringProblem.
+    problem = {
+        "goal": temp["goal"],
+        "max_x": temp["max_x"],
+        "max_y": temp["max_y"],
+        "min_x": temp["min_x"],
+        "min_y": temp["min_y"]
+    }
+    
+    return {"state": state, "problem": problem}
 
 def process_directory(input_dir, output_dir):
     """
@@ -150,7 +179,6 @@ def process_directory(input_dir, output_dir):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     
-    # Process all files ending with .pddl
     for filename in os.listdir(input_dir):
         if filename.lower().endswith(".pddl"):
             input_path = os.path.join(input_dir, filename)
@@ -158,7 +186,6 @@ def process_directory(input_dir, output_dir):
                 file_content = infile.read()
             parsed_data = parse_pddl(file_content)
             
-            # Create an output filename with .json extension.
             output_filename = os.path.splitext(filename)[0] + ".json"
             output_path = os.path.join(output_dir, output_filename)
             with open(output_path, "w") as outfile:
@@ -167,9 +194,8 @@ def process_directory(input_dir, output_dir):
 
 def main():
     # Set the input and output directories.
-    input_directory = "problems_pddl"  # Folder containing your 20 PDDL files.
+    input_directory = "problems_pddl"  # Folder containing your PDDL files.
     output_directory = "output_json_problems"  # Folder where JSON files will be written.
-    
     process_directory(input_directory, output_directory)
 
 if __name__ == "__main__":

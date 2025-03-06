@@ -1,0 +1,19 @@
+{
+    "state": {
+        "grid": {
+            "row_size": 6,
+            "col_size": 8,
+            "cells": {}
+        },
+        "horizontalcars": [
+            {
+                "name": "red-car",
+                "x": 0,
+                "y": 2
+            }
+        ],
+        "verticalcars": [],
+        "horizontaltrucks": [],
+        "verticaltrucks": []
+    }
+}

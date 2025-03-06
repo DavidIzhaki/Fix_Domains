@@ -183,10 +183,12 @@
             }
         ]
     },
-    "grid": {
-        "max_x": 11,
-        "min_x": 1,
-        "max_y": 11,
-        "min_y": 1
+    "problem": {
+        "grid": {
+            "max_x": 11,
+            "min_x": 1,
+            "max_y": 11,
+            "min_y": 1
+        }
     }
 }

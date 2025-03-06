@@ -1,0 +1,61 @@
+(define (problem 1)
+(:domain RedCar)
+(:objects
+
+
+ red-car - horizontalCar
+
+)
+(:init
+    (= (x red-car) 0)
+(= (y red-car) 2)
+    
+    ;; Grid boundaries
+    (= (min_x) 0)
+    (= (max_x) 8)
+    (= (min_y) 0)
+    (= (max_y) 6)
+    
+    ;; Clear cells
+    (= (clear 0 0) 1)
+(= (clear 1 0) 1)
+(= (clear 2 0) 1)
+(= (clear 3 0) 1)
+(= (clear 4 0) 1)
+(= (clear 5 0) 1)
+(= (clear 0 1) 1)
+(= (clear 1 1) 1)
+(= (clear 2 1) 1)
+(= (clear 3 1) 1)
+(= (clear 4 1) 1)
+(= (clear 5 1) 1)
+(= (clear 0 2) 0)
+(= (clear 1 2) 0)
+(= (clear 2 2) 1)
+(= (clear 3 2) 1)
+(= (clear 4 2) 1)
+(= (clear 5 2) 1)
+(= (clear 0 3) 1)
+(= (clear 1 3) 1)
+(= (clear 2 3) 1)
+(= (clear 3 3) 1)
+(= (clear 4 3) 1)
+(= (clear 5 3) 1)
+(= (clear 0 4) 1)
+(= (clear 1 4) 1)
+(= (clear 2 4) 1)
+(= (clear 3 4) 1)
+(= (clear 4 4) 1)
+(= (clear 5 4) 1)
+(= (clear 0 5) 1)
+(= (clear 1 5) 1)
+(= (clear 2 5) 1)
+(= (clear 3 5) 1)
+(= (clear 4 5) 1)
+(= (clear 5 5) 1)
+)
+(:goal (and 
+    (= (x red-car) (- (max_x) 2))
+    (= (y red-car) 2)
+))
+)
