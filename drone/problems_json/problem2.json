@@ -1,38 +1,51 @@
 {
-    "battery_level": 13,
-    "battery_capacity": 13,
-    "min_x": 0,
-    "max_x": 1,
-    "min_y": 0,
-    "max_y": 1,
-    "min_z": 0,
-    "max_z": 4,
-    "locations": {
-        "0": [
-            0,
-            0,
-            0
-        ],
-        "1": [
-            0,
-            0,
-            1
-        ],
-        "2": [
-            0,
-            0,
-            2
-        ],
-        "3": [
-            0,
-            0,
-            3
+    "state": {
+        "battery_level": 13,
+        "battery_capacity": 13,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "visited": {
+            "0": false,
+            "1": false,
+            "2": false,
+            "3": false
+        },
+        "locations": {
+            "0": [
+                0,
+                0,
+                0
+            ],
+            "1": [
+                0,
+                0,
+                1
+            ],
+            "2": [
+                0,
+                0,
+                2
+            ],
+            "3": [
+                0,
+                0,
+                3
+            ]
+        },
+        "bounds": [
+            [
+                0,
+                1
+            ],
+            [
+                0,
+                1
+            ],
+            [
+                0,
+                4
+            ]
         ]
-    },
-    "visited": {
-        "0": false,
-        "1": false,
-        "2": false,
-        "3": false
     }
 }
