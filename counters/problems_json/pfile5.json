@@ -1,0 +1,171 @@
+{
+    "state": {
+        "counters": [
+            {
+                "name": "c0",
+                "value": 5
+            },
+            {
+                "name": "c1",
+                "value": 7
+            },
+            {
+                "name": "c2",
+                "value": 0
+            },
+            {
+                "name": "c3",
+                "value": 15
+            },
+            {
+                "name": "c4",
+                "value": 4
+            },
+            {
+                "name": "c5",
+                "value": 14
+            },
+            {
+                "name": "c6",
+                "value": 10
+            },
+            {
+                "name": "c7",
+                "value": 1
+            }
+        ]
+    },
+    "problem": {
+        "goal": {
+            "conditions": [
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c1"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c2"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c2"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c3"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c3"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c4"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c4"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c5"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c5"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c6"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c6"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c7"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                }
+            ]
+        },
+        "max_value": 16
+    }
+}

@@ -1,0 +1,65 @@
+{
+  "state": {
+    "num_cities": 3,
+    "airplanes": [
+      {
+        "index": 0,
+        "slow_burn": 4,
+        "fast_burn": 15,
+        "capacity": 6000,
+        "fuel": 4000,
+        "location": 0,
+        "zoom_limit": 8,
+        "onboard": 0
+      }
+    ],
+    "distances": {
+      "0,0": 0,
+      "0,1": 678,
+      "0,2": 775,
+      "1,0": 678,
+      "1,1": 0,
+      "1,2": 810,
+      "2,0": 775,
+      "2,1": 810,
+      "2,2": 0
+    },
+    "persons": [
+      {
+        "location": 0,
+        "on_airplane": -1
+      },
+      {
+        "location": 0,
+        "on_airplane": -1
+      },
+      {
+        "location": 1,
+        "on_airplane": -1
+      }
+    ],
+    "total_fuel_used": 0
+  },
+  "problem": {
+    "goal": {
+      "airplanes": [],
+      "persons": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    "minimize": {
+      "fuel": 1
+    }
+  }
+}
