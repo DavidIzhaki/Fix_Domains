@@ -1,0 +1,60 @@
+{
+    "state": {
+        "sleds": {
+            "s0": {
+                "location": "waypoint0",
+                "supplies": 1
+            },
+            "s1": {
+                "location": "waypoint0",
+                "supplies": 1
+            }
+        },
+        "waypoint_supplies": {
+            "waypoint0": 1000,
+            "waypoint1": 0,
+            "waypoint2": 0,
+            "waypoint3": 0,
+            "waypoint4": 0,
+            "waypoint5": 0,
+            "waypoint6": 0,
+            "waypoint7": 0,
+            "waypoint8": 0
+        }
+    },
+    "problem": {
+        "goal_locations": {
+            "s0": "waypoint8"
+        },
+        "waypoint_connections": {
+            "waypoint0": [
+                "waypoint1"
+            ],
+            "waypoint1": [
+                "waypoint2"
+            ],
+            "waypoint2": [
+                "waypoint3"
+            ],
+            "waypoint3": [
+                "waypoint4"
+            ],
+            "waypoint4": [
+                "waypoint5"
+            ],
+            "waypoint5": [
+                "waypoint6"
+            ],
+            "waypoint6": [
+                "waypoint7"
+            ],
+            "waypoint7": [
+                "waypoint8"
+            ]
+        },
+        "sled_capacity": {
+            "s0": 4,
+            "s1": 4
+        }
+    }
+}

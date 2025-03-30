@@ -1,26 +1,39 @@
 {
-    "battery_level": 9,
-    "battery_capacity": 9,
-    "min_x": 0,
-    "max_x": 1,
-    "min_y": 0,
-    "max_y": 1,
-    "min_z": 0,
-    "max_z": 2,
-    "locations": {
-        "0": [
-            0,
-            0,
-            0
-        ],
-        "1": [
-            0,
-            0,
-            1
+    "state": {
+        "battery_level": 9,
+        "battery_capacity": 9,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "visited": {
+            "0": false,
+            "1": false
+        },
+        "locations": {
+            "0": [
+                0,
+                0,
+                0
+            ],
+            "1": [
+                0,
+                0,
+                1
+            ]
+        },
+        "bounds": [
+            [
+                0,
+                1
+            ],
+            [
+                0,
+                1
+            ],
+            [
+                0,
+                2
+            ]
         ]
-    },
-    "visited": {
-        "0": false,
-        "1": false
     }
 }

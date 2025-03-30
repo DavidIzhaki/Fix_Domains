@@ -1,0 +1,212 @@
+{
+    "state": {
+        "bots": [],
+        "items": [
+            {
+                "location": 0,
+                "weight": 1,
+                "in_arm": -1,
+                "in_tray": -1,
+                "index": 24
+            },
+            {
+                "location": 0,
+                "weight": 1,
+                "in_arm": -1,
+                "in_tray": -1,
+                "index": 23
+            },
+            {
+                "location": 0,
+                "weight": 1,
+                "in_arm": -1,
+                "in_tray": -1,
+                "index": 22
+            },
+            {
+                "location": 0,
+                "weight": 1,
+                "in_arm": -1,
+                "in_tray": -1,
+                "index": 21
+            },
+            {
+                "location": 0,
+                "weight": 1,
+                "in_arm": -1,
+                "in_tray": -1,
+                "index": 20
+            },
+            {
+                "location": 0,
+                "weight": 1,
+                "in_arm": -1,
+                "in_tray": -1,
+                "index": 19
+            },
+            {
+                "location": 0,
+                "weight": 1,
+                "in_arm": -1,
+                "in_tray": -1,
+                "index": 18
+            },
+            {
+                "location": 0,
+                "weight": 1,
+                "in_arm": -1,
+                "in_tray": -1,
+                "index": 17
+            },
+            {
+                "location": 0,
+                "weight": 1,
+                "in_arm": -1,
+                "in_tray": -1,
+                "index": 16
+            },
+            {
+                "location": 0,
+                "weight": 1,
+                "in_arm": -1,
+                "in_tray": -1,
+                "index": 15
+            },
+            {
+                "location": 0,
+                "weight": 1,
+                "in_arm": -1,
+                "in_tray": -1,
+                "index": 14
+            },
+            {
+                "location": 0,
+                "weight": 1,
+                "in_arm": -1,
+                "in_tray": -1,
+                "index": 13
+            },
+            {
+                "location": 0,
+                "weight": 1,
+                "in_arm": -1,
+                "in_tray": -1,
+                "index": 12
+            },
+            {
+                "location": 0,
+                "weight": 1,
+                "in_arm": -1,
+                "in_tray": -1,
+                "index": 11
+            },
+            {
+                "location": 0,
+                "weight": 1,
+                "in_arm": -1,
+                "in_tray": -1,
+                "index": 10
+            },
+            {
+                "location": 0,
+                "weight": 1,
+                "in_arm": -1,
+                "in_tray": -1,
+                "index": 9
+            },
+            {
+                "location": 0,
+                "weight": 1,
+                "in_arm": -1,
+                "in_tray": -1,
+                "index": 8
+            },
+            {
+                "location": 0,
+                "weight": 1,
+                "in_arm": -1,
+                "in_tray": -1,
+                "index": 7
+            },
+            {
+                "location": 0,
+                "weight": 1,
+                "in_arm": -1,
+                "in_tray": -1,
+                "index": 6
+            },
+            {
+                "location": 0,
+                "weight": 1,
+                "in_arm": -1,
+                "in_tray": -1,
+                "index": 5
+            },
+            {
+                "location": 0,
+                "weight": 1,
+                "in_arm": -1,
+                "in_tray": -1,
+                "index": 4
+            },
+            {
+                "location": 0,
+                "weight": 1,
+                "in_arm": -1,
+                "in_tray": -1,
+                "index": 3
+            },
+            {
+                "location": 0,
+                "weight": 1,
+                "in_arm": -1,
+                "in_tray": -1,
+                "index": 2
+            },
+            {
+                "location": 0,
+                "weight": 1,
+                "in_arm": -1,
+                "in_tray": -1,
+                "index": 1
+            }
+        ],
+        "cost": 0
+    },
+    "problem": {
+        "goal_locations": {
+            "24": 1,
+            "23": 1,
+            "22": 1,
+            "21": 1,
+            "20": 1,
+            "19": 1,
+            "18": 1,
+            "17": 1,
+            "16": 1,
+            "15": 1,
+            "14": 1,
+            "13": 1,
+            "12": 1,
+            "11": 1,
+            "10": 1,
+            "9": 1,
+            "8": 1,
+            "7": 1,
+            "6": 1,
+            "5": 1,
+            "4": 1,
+            "3": 1,
+            "2": 1,
+            "1": 1
+        },
+        "room_connections": {
+            "room0": [
+                1
+            ],
+            "room1": [
+                0
+            ]
+        }
+    }
+}
