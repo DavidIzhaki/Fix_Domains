@@ -32,20 +32,37 @@ This domain is often used to evaluate search strategies and heuristics in numeri
 
 ---
 
-## ⚙️ Actions
+### ⚙️ Actions
 
-### ➕ `increase-counter`
+#### ➕ `increase-counter`
 
-```lisp
-(:action increase-counter
-  :parameters (?c - counter)
-  :precondition (< (value ?c) max_int)
-  :effect (increase (value ?c) 1)
-)```
+<pre> ```lisp (:action increase-counter :parameters (?c - counter) :precondition (< (value ?c) max_int) :effect (increase (value ?c) 1) ) (:action decrease-counter :parameters (?c - counter) :precondition (> (value ?c) 0) :effect (decrease (value ?c) 1) ) ``` </pre>
 
-```lisp
+<pre>```lisp
 (:action decrease-counter
   :parameters (?c - counter)
   :precondition (> (value ?c) 0)
   :effect (decrease (value ?c) 1)
+)``` </pre>
+
+
+#### Description:
+Increases the counter's value by 1, only if it's below the maximum allowed (max_int).
+
+#### ➖ decrease-counter
+
+<pre> ```lisp
+  (:action decrease-counter
+  :parameters (?c - counter)
+  :precondition (> (value ?c) 0)
+  :effect (decrease (value ?c) 1)
 )
+```</pre>
+
+#### Description:
+Decreases the counter's value by 1, only if it's greater than 0.
+
+
+
+
+
