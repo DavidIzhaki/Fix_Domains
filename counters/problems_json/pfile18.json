@@ -1,0 +1,971 @@
+{
+    "state": {
+        "counters": [
+            {
+                "name": "c0",
+                "value": 24
+            },
+            {
+                "name": "c1",
+                "value": 32
+            },
+            {
+                "name": "c2",
+                "value": 17
+            },
+            {
+                "name": "c3",
+                "value": 3
+            },
+            {
+                "name": "c4",
+                "value": 13
+            },
+            {
+                "name": "c5",
+                "value": 51
+            },
+            {
+                "name": "c6",
+                "value": 52
+            },
+            {
+                "name": "c7",
+                "value": 75
+            },
+            {
+                "name": "c8",
+                "value": 69
+            },
+            {
+                "name": "c9",
+                "value": 58
+            },
+            {
+                "name": "c10",
+                "value": 47
+            },
+            {
+                "name": "c11",
+                "value": 23
+            },
+            {
+                "name": "c12",
+                "value": 78
+            },
+            {
+                "name": "c13",
+                "value": 31
+            },
+            {
+                "name": "c14",
+                "value": 3
+            },
+            {
+                "name": "c15",
+                "value": 42
+            },
+            {
+                "name": "c16",
+                "value": 39
+            },
+            {
+                "name": "c17",
+                "value": 74
+            },
+            {
+                "name": "c18",
+                "value": 39
+            },
+            {
+                "name": "c19",
+                "value": 54
+            },
+            {
+                "name": "c20",
+                "value": 50
+            },
+            {
+                "name": "c21",
+                "value": 79
+            },
+            {
+                "name": "c22",
+                "value": 50
+            },
+            {
+                "name": "c23",
+                "value": 62
+            },
+            {
+                "name": "c24",
+                "value": 16
+            },
+            {
+                "name": "c25",
+                "value": 67
+            },
+            {
+                "name": "c26",
+                "value": 16
+            },
+            {
+                "name": "c27",
+                "value": 9
+            },
+            {
+                "name": "c28",
+                "value": 25
+            },
+            {
+                "name": "c29",
+                "value": 71
+            },
+            {
+                "name": "c30",
+                "value": 49
+            },
+            {
+                "name": "c31",
+                "value": 76
+            },
+            {
+                "name": "c32",
+                "value": 28
+            },
+            {
+                "name": "c33",
+                "value": 55
+            },
+            {
+                "name": "c34",
+                "value": 74
+            },
+            {
+                "name": "c35",
+                "value": 76
+            },
+            {
+                "name": "c36",
+                "value": 13
+            },
+            {
+                "name": "c37",
+                "value": 77
+            },
+            {
+                "name": "c38",
+                "value": 52
+            },
+            {
+                "name": "c39",
+                "value": 22
+            }
+        ]
+    },
+    "problem": {
+        "goal": {
+            "conditions": [
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c1"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c2"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c2"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c3"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c3"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c4"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c4"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c5"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c5"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c6"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c6"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c7"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c7"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c8"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c8"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c9"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c9"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c10"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c10"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c11"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c11"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c12"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c12"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c13"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c13"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c14"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c14"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c15"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c15"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c16"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c16"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c17"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c17"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c18"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c18"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c19"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c19"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c20"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c20"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c21"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c21"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c22"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c22"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c23"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c23"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c24"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c24"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c25"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c25"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c26"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c26"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c27"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c27"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c28"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c28"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c29"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c29"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c30"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c30"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c31"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c31"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c32"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c32"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c33"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c33"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c34"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c34"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c35"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c35"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c36"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c36"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c37"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c37"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c38"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                },
+                {
+                    "left": {
+                        "terms": [
+                            [
+                                1,
+                                "c38"
+                            ]
+                        ],
+                        "constant": 1
+                    },
+                    "operator": "<=",
+                    "right": {
+                        "terms": [
+                            [
+                                1,
+                                "c39"
+                            ]
+                        ],
+                        "constant": 0
+                    }
+                }
+            ]
+        },
+        "max_value": 80
+    }
+}

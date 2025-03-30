@@ -1,0 +1,146 @@
+{
+  "state": {
+    "num_cities": 5,
+    "airplanes": [
+      {
+        "index": 0,
+        "slow_burn": 5,
+        "fast_burn": 14,
+        "capacity": 15412,
+        "fuel": 1458,
+        "location": 0,
+        "zoom_limit": 2,
+        "onboard": 0
+      },
+      {
+        "index": 1,
+        "slow_burn": 4,
+        "fast_burn": 13,
+        "capacity": 9628,
+        "fuel": 2728,
+        "location": 4,
+        "zoom_limit": 3,
+        "onboard": 0
+      },
+      {
+        "index": 2,
+        "slow_burn": 4,
+        "fast_burn": 8,
+        "capacity": 9038,
+        "fuel": 667,
+        "location": 2,
+        "zoom_limit": 7,
+        "onboard": 0
+      }
+    ],
+    "distances": {
+      "0,0": 0,
+      "0,1": 808,
+      "0,2": 932,
+      "0,3": 760,
+      "0,4": 697,
+      "1,0": 808,
+      "1,1": 0,
+      "1,2": 559,
+      "1,3": 673,
+      "1,4": 742,
+      "2,0": 932,
+      "2,1": 559,
+      "2,2": 0,
+      "2,3": 938,
+      "2,4": 978,
+      "3,0": 760,
+      "3,1": 673,
+      "3,2": 938,
+      "3,3": 0,
+      "3,4": 803,
+      "4,0": 697,
+      "4,1": 742,
+      "4,2": 978,
+      "4,3": 803,
+      "4,4": 0
+    },
+    "persons": [
+      {
+        "location": 3,
+        "on_airplane": -1
+      },
+      {
+        "location": 3,
+        "on_airplane": -1
+      },
+      {
+        "location": 4,
+        "on_airplane": -1
+      },
+      {
+        "location": 4,
+        "on_airplane": -1
+      },
+      {
+        "location": 1,
+        "on_airplane": -1
+      },
+      {
+        "location": 0,
+        "on_airplane": -1
+      },
+      {
+        "location": 1,
+        "on_airplane": -1
+      },
+      {
+        "location": 0,
+        "on_airplane": -1
+      }
+    ],
+    "total_fuel_used": 0
+  },
+  "problem": {
+    "goal": {
+      "airplanes": [
+        [
+          0,
+          2
+        ]
+      ],
+      "persons": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          7,
+          3
+        ]
+      ]
+    },
+    "minimize": {
+      "fuel": 1
+    }
+  }
+}

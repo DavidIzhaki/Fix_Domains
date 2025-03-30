@@ -1,0 +1,2183 @@
+{
+    "state": {
+        "trucks": [
+            {
+                "name": "truck0",
+                "location": -1
+            }
+        ],
+        "markets": [
+            {
+                "location": "0",
+                "items": {
+                    "1": {
+                        "price": 22.0,
+                        "on_sale": 7
+                    },
+                    "7": {
+                        "price": 49.0,
+                        "on_sale": 6
+                    },
+                    "9": {
+                        "price": 43.0,
+                        "on_sale": 1
+                    },
+                    "11": {
+                        "price": 31.0,
+                        "on_sale": 4
+                    },
+                    "12": {
+                        "price": 34.0,
+                        "on_sale": 10
+                    },
+                    "13": {
+                        "price": 17.0,
+                        "on_sale": 6
+                    },
+                    "15": {
+                        "price": 15.0,
+                        "on_sale": 14
+                    },
+                    "16": {
+                        "price": 28.0,
+                        "on_sale": 10
+                    },
+                    "18": {
+                        "price": 28.0,
+                        "on_sale": 14
+                    },
+                    "0": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "2": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "3": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "4": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "5": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "6": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "8": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "10": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "14": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "17": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "19": {
+                        "on_sale": 0,
+                        "price": 0
+                    }
+                }
+            },
+            {
+                "location": "1",
+                "items": {
+                    "0": {
+                        "price": 3.0,
+                        "on_sale": 20
+                    },
+                    "1": {
+                        "price": 36.0,
+                        "on_sale": 2
+                    },
+                    "3": {
+                        "price": 43.0,
+                        "on_sale": 18
+                    },
+                    "5": {
+                        "price": 26.0,
+                        "on_sale": 15
+                    },
+                    "6": {
+                        "price": 22.0,
+                        "on_sale": 7
+                    },
+                    "9": {
+                        "price": 49.0,
+                        "on_sale": 11
+                    },
+                    "10": {
+                        "price": 29.0,
+                        "on_sale": 15
+                    },
+                    "12": {
+                        "price": 21.0,
+                        "on_sale": 8
+                    },
+                    "13": {
+                        "price": 18.0,
+                        "on_sale": 12
+                    },
+                    "14": {
+                        "price": 45.0,
+                        "on_sale": 1
+                    },
+                    "15": {
+                        "price": 26.0,
+                        "on_sale": 20
+                    },
+                    "16": {
+                        "price": 25.0,
+                        "on_sale": 1
+                    },
+                    "19": {
+                        "price": 22.0,
+                        "on_sale": 12
+                    },
+                    "2": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "4": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "7": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "8": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "11": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "17": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "18": {
+                        "on_sale": 0,
+                        "price": 0
+                    }
+                }
+            },
+            {
+                "location": "2",
+                "items": {
+                    "0": {
+                        "price": 23.0,
+                        "on_sale": 2
+                    },
+                    "1": {
+                        "price": 15.0,
+                        "on_sale": 10
+                    },
+                    "2": {
+                        "price": 2.0,
+                        "on_sale": 11
+                    },
+                    "4": {
+                        "price": 50.0,
+                        "on_sale": 9
+                    },
+                    "6": {
+                        "price": 16.0,
+                        "on_sale": 8
+                    },
+                    "8": {
+                        "price": 29.0,
+                        "on_sale": 12
+                    },
+                    "9": {
+                        "price": 46.0,
+                        "on_sale": 20
+                    },
+                    "10": {
+                        "price": 1.0,
+                        "on_sale": 1
+                    },
+                    "11": {
+                        "price": 10.0,
+                        "on_sale": 16
+                    },
+                    "12": {
+                        "price": 19.0,
+                        "on_sale": 11
+                    },
+                    "13": {
+                        "price": 49.0,
+                        "on_sale": 19
+                    },
+                    "14": {
+                        "price": 4.0,
+                        "on_sale": 1
+                    },
+                    "15": {
+                        "price": 50.0,
+                        "on_sale": 20
+                    },
+                    "18": {
+                        "price": 32.0,
+                        "on_sale": 6
+                    },
+                    "3": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "5": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "7": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "16": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "17": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "19": {
+                        "on_sale": 0,
+                        "price": 0
+                    }
+                }
+            },
+            {
+                "location": "3",
+                "items": {
+                    "2": {
+                        "price": 20.0,
+                        "on_sale": 1
+                    },
+                    "3": {
+                        "price": 16.0,
+                        "on_sale": 5
+                    },
+                    "4": {
+                        "price": 11.0,
+                        "on_sale": 20
+                    },
+                    "5": {
+                        "price": 47.0,
+                        "on_sale": 14
+                    },
+                    "7": {
+                        "price": 18.0,
+                        "on_sale": 16
+                    },
+                    "9": {
+                        "price": 47.0,
+                        "on_sale": 12
+                    },
+                    "10": {
+                        "price": 42.0,
+                        "on_sale": 19
+                    },
+                    "11": {
+                        "price": 46.0,
+                        "on_sale": 5
+                    },
+                    "13": {
+                        "price": 18.0,
+                        "on_sale": 2
+                    },
+                    "19": {
+                        "price": 40.0,
+                        "on_sale": 9
+                    },
+                    "0": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "1": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "6": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "8": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "12": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "14": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "15": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "16": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "17": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "18": {
+                        "on_sale": 0,
+                        "price": 0
+                    }
+                }
+            },
+            {
+                "location": "4",
+                "items": {
+                    "0": {
+                        "price": 26.0,
+                        "on_sale": 1
+                    },
+                    "3": {
+                        "price": 41.0,
+                        "on_sale": 14
+                    },
+                    "7": {
+                        "price": 9.0,
+                        "on_sale": 4
+                    },
+                    "8": {
+                        "price": 21.0,
+                        "on_sale": 4
+                    },
+                    "9": {
+                        "price": 18.0,
+                        "on_sale": 16
+                    },
+                    "10": {
+                        "price": 36.0,
+                        "on_sale": 16
+                    },
+                    "14": {
+                        "price": 44.0,
+                        "on_sale": 8
+                    },
+                    "15": {
+                        "price": 40.0,
+                        "on_sale": 18
+                    },
+                    "19": {
+                        "price": 2.0,
+                        "on_sale": 14
+                    },
+                    "1": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "2": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "4": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "5": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "6": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "11": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "12": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "13": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "16": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "17": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "18": {
+                        "on_sale": 0,
+                        "price": 0
+                    }
+                }
+            },
+            {
+                "location": "5",
+                "items": {
+                    "0": {
+                        "price": 46.0,
+                        "on_sale": 6
+                    },
+                    "2": {
+                        "price": 42.0,
+                        "on_sale": 19
+                    },
+                    "3": {
+                        "price": 17.0,
+                        "on_sale": 6
+                    },
+                    "4": {
+                        "price": 24.0,
+                        "on_sale": 7
+                    },
+                    "7": {
+                        "price": 39.0,
+                        "on_sale": 16
+                    },
+                    "8": {
+                        "price": 19.0,
+                        "on_sale": 9
+                    },
+                    "9": {
+                        "price": 35.0,
+                        "on_sale": 5
+                    },
+                    "11": {
+                        "price": 8.0,
+                        "on_sale": 10
+                    },
+                    "12": {
+                        "price": 17.0,
+                        "on_sale": 5
+                    },
+                    "14": {
+                        "price": 39.0,
+                        "on_sale": 19
+                    },
+                    "15": {
+                        "price": 9.0,
+                        "on_sale": 1
+                    },
+                    "16": {
+                        "price": 48.0,
+                        "on_sale": 2
+                    },
+                    "18": {
+                        "price": 10.0,
+                        "on_sale": 2
+                    },
+                    "19": {
+                        "price": 24.0,
+                        "on_sale": 11
+                    },
+                    "1": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "5": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "6": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "10": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "13": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "17": {
+                        "on_sale": 0,
+                        "price": 0
+                    }
+                }
+            },
+            {
+                "location": "6",
+                "items": {
+                    "0": {
+                        "price": 11.0,
+                        "on_sale": 17
+                    },
+                    "1": {
+                        "price": 7.0,
+                        "on_sale": 4
+                    },
+                    "3": {
+                        "price": 44.0,
+                        "on_sale": 1
+                    },
+                    "4": {
+                        "price": 7.0,
+                        "on_sale": 3
+                    },
+                    "5": {
+                        "price": 50.0,
+                        "on_sale": 13
+                    },
+                    "6": {
+                        "price": 41.0,
+                        "on_sale": 20
+                    },
+                    "9": {
+                        "price": 26.0,
+                        "on_sale": 18
+                    },
+                    "10": {
+                        "price": 41.0,
+                        "on_sale": 14
+                    },
+                    "11": {
+                        "price": 16.0,
+                        "on_sale": 11
+                    },
+                    "13": {
+                        "price": 16.0,
+                        "on_sale": 4
+                    },
+                    "14": {
+                        "price": 50.0,
+                        "on_sale": 12
+                    },
+                    "16": {
+                        "price": 36.0,
+                        "on_sale": 14
+                    },
+                    "17": {
+                        "price": 34.0,
+                        "on_sale": 5
+                    },
+                    "18": {
+                        "price": 37.0,
+                        "on_sale": 3
+                    },
+                    "19": {
+                        "price": 32.0,
+                        "on_sale": 2
+                    },
+                    "2": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "7": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "8": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "12": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "15": {
+                        "on_sale": 0,
+                        "price": 0
+                    }
+                }
+            },
+            {
+                "location": "7",
+                "items": {
+                    "0": {
+                        "price": 25.0,
+                        "on_sale": 6
+                    },
+                    "1": {
+                        "price": 38.0,
+                        "on_sale": 20
+                    },
+                    "2": {
+                        "price": 27.0,
+                        "on_sale": 14
+                    },
+                    "3": {
+                        "price": 18.0,
+                        "on_sale": 13
+                    },
+                    "4": {
+                        "price": 7.0,
+                        "on_sale": 20
+                    },
+                    "6": {
+                        "price": 50.0,
+                        "on_sale": 18
+                    },
+                    "9": {
+                        "price": 9.0,
+                        "on_sale": 19
+                    },
+                    "14": {
+                        "price": 25.0,
+                        "on_sale": 14
+                    },
+                    "5": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "7": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "8": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "10": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "11": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "12": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "13": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "15": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "16": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "17": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "18": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "19": {
+                        "on_sale": 0,
+                        "price": 0
+                    }
+                }
+            },
+            {
+                "location": "8",
+                "items": {
+                    "0": {
+                        "price": 34.0,
+                        "on_sale": 3
+                    },
+                    "6": {
+                        "price": 18.0,
+                        "on_sale": 10
+                    },
+                    "7": {
+                        "price": 44.0,
+                        "on_sale": 12
+                    },
+                    "8": {
+                        "price": 24.0,
+                        "on_sale": 20
+                    },
+                    "10": {
+                        "price": 26.0,
+                        "on_sale": 5
+                    },
+                    "11": {
+                        "price": 43.0,
+                        "on_sale": 18
+                    },
+                    "12": {
+                        "price": 34.0,
+                        "on_sale": 13
+                    },
+                    "13": {
+                        "price": 1.0,
+                        "on_sale": 6
+                    },
+                    "16": {
+                        "price": 3.0,
+                        "on_sale": 4
+                    },
+                    "18": {
+                        "price": 42.0,
+                        "on_sale": 9
+                    },
+                    "1": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "2": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "3": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "4": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "5": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "9": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "14": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "15": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "17": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "19": {
+                        "on_sale": 0,
+                        "price": 0
+                    }
+                }
+            },
+            {
+                "location": "9",
+                "items": {
+                    "4": {
+                        "price": 46.0,
+                        "on_sale": 20
+                    },
+                    "5": {
+                        "price": 9.0,
+                        "on_sale": 14
+                    },
+                    "6": {
+                        "price": 41.0,
+                        "on_sale": 15
+                    },
+                    "7": {
+                        "price": 36.0,
+                        "on_sale": 9
+                    },
+                    "8": {
+                        "price": 37.0,
+                        "on_sale": 4
+                    },
+                    "9": {
+                        "price": 31.0,
+                        "on_sale": 6
+                    },
+                    "10": {
+                        "price": 2.0,
+                        "on_sale": 1
+                    },
+                    "12": {
+                        "price": 4.0,
+                        "on_sale": 15
+                    },
+                    "15": {
+                        "price": 32.0,
+                        "on_sale": 8
+                    },
+                    "16": {
+                        "price": 39.0,
+                        "on_sale": 3
+                    },
+                    "17": {
+                        "price": 39.0,
+                        "on_sale": 15
+                    },
+                    "18": {
+                        "price": 18.0,
+                        "on_sale": 6
+                    },
+                    "0": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "1": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "2": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "3": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "11": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "13": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "14": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "19": {
+                        "on_sale": 0,
+                        "price": 0
+                    }
+                }
+            },
+            {
+                "location": "10",
+                "items": {
+                    "0": {
+                        "price": 20.0,
+                        "on_sale": 2
+                    },
+                    "5": {
+                        "price": 16.0,
+                        "on_sale": 3
+                    },
+                    "6": {
+                        "price": 8.0,
+                        "on_sale": 5
+                    },
+                    "8": {
+                        "price": 46.0,
+                        "on_sale": 3
+                    },
+                    "10": {
+                        "price": 35.0,
+                        "on_sale": 19
+                    },
+                    "12": {
+                        "price": 14.0,
+                        "on_sale": 10
+                    },
+                    "13": {
+                        "price": 47.0,
+                        "on_sale": 9
+                    },
+                    "14": {
+                        "price": 43.0,
+                        "on_sale": 16
+                    },
+                    "1": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "2": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "3": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "4": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "7": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "9": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "11": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "15": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "16": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "17": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "18": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "19": {
+                        "on_sale": 0,
+                        "price": 0
+                    }
+                }
+            },
+            {
+                "location": "11",
+                "items": {
+                    "0": {
+                        "price": 40.0,
+                        "on_sale": 2
+                    },
+                    "1": {
+                        "price": 33.0,
+                        "on_sale": 16
+                    },
+                    "4": {
+                        "price": 10.0,
+                        "on_sale": 1
+                    },
+                    "5": {
+                        "price": 33.0,
+                        "on_sale": 8
+                    },
+                    "6": {
+                        "price": 8.0,
+                        "on_sale": 4
+                    },
+                    "8": {
+                        "price": 37.0,
+                        "on_sale": 1
+                    },
+                    "10": {
+                        "price": 26.0,
+                        "on_sale": 17
+                    },
+                    "14": {
+                        "price": 41.0,
+                        "on_sale": 19
+                    },
+                    "16": {
+                        "price": 38.0,
+                        "on_sale": 2
+                    },
+                    "17": {
+                        "price": 28.0,
+                        "on_sale": 4
+                    },
+                    "19": {
+                        "price": 34.0,
+                        "on_sale": 8
+                    },
+                    "2": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "3": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "7": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "9": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "11": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "12": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "13": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "15": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "18": {
+                        "on_sale": 0,
+                        "price": 0
+                    }
+                }
+            },
+            {
+                "location": "12",
+                "items": {
+                    "2": {
+                        "price": 33.0,
+                        "on_sale": 17
+                    },
+                    "4": {
+                        "price": 39.0,
+                        "on_sale": 16
+                    },
+                    "6": {
+                        "price": 24.0,
+                        "on_sale": 9
+                    },
+                    "9": {
+                        "price": 21.0,
+                        "on_sale": 10
+                    },
+                    "12": {
+                        "price": 27.0,
+                        "on_sale": 12
+                    },
+                    "14": {
+                        "price": 7.0,
+                        "on_sale": 20
+                    },
+                    "16": {
+                        "price": 22.0,
+                        "on_sale": 15
+                    },
+                    "19": {
+                        "price": 32.0,
+                        "on_sale": 1
+                    },
+                    "0": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "1": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "3": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "5": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "7": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "8": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "10": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "11": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "13": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "15": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "17": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "18": {
+                        "on_sale": 0,
+                        "price": 0
+                    }
+                }
+            },
+            {
+                "location": "13",
+                "items": {
+                    "0": {
+                        "price": 38.0,
+                        "on_sale": 12
+                    },
+                    "4": {
+                        "price": 12.0,
+                        "on_sale": 10
+                    },
+                    "8": {
+                        "price": 21.0,
+                        "on_sale": 15
+                    },
+                    "9": {
+                        "price": 8.0,
+                        "on_sale": 14
+                    },
+                    "15": {
+                        "price": 32.0,
+                        "on_sale": 6
+                    },
+                    "17": {
+                        "price": 36.0,
+                        "on_sale": 1
+                    },
+                    "19": {
+                        "price": 15.0,
+                        "on_sale": 4
+                    },
+                    "1": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "2": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "3": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "5": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "6": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "7": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "10": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "11": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "12": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "13": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "14": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "16": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "18": {
+                        "on_sale": 0,
+                        "price": 0
+                    }
+                }
+            },
+            {
+                "location": "14",
+                "items": {
+                    "1": {
+                        "price": 29.0,
+                        "on_sale": 6
+                    },
+                    "3": {
+                        "price": 20.0,
+                        "on_sale": 7
+                    },
+                    "6": {
+                        "price": 30.0,
+                        "on_sale": 18
+                    },
+                    "7": {
+                        "price": 28.0,
+                        "on_sale": 6
+                    },
+                    "8": {
+                        "price": 15.0,
+                        "on_sale": 3
+                    },
+                    "9": {
+                        "price": 21.0,
+                        "on_sale": 18
+                    },
+                    "10": {
+                        "price": 12.0,
+                        "on_sale": 8
+                    },
+                    "12": {
+                        "price": 24.0,
+                        "on_sale": 2
+                    },
+                    "14": {
+                        "price": 4.0,
+                        "on_sale": 17
+                    },
+                    "15": {
+                        "price": 19.0,
+                        "on_sale": 9
+                    },
+                    "16": {
+                        "price": 11.0,
+                        "on_sale": 10
+                    },
+                    "17": {
+                        "price": 31.0,
+                        "on_sale": 7
+                    },
+                    "18": {
+                        "price": 12.0,
+                        "on_sale": 1
+                    },
+                    "0": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "2": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "4": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "5": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "11": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "13": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "19": {
+                        "on_sale": 0,
+                        "price": 0
+                    }
+                }
+            },
+            {
+                "location": "15",
+                "items": {
+                    "0": {
+                        "price": 50.0,
+                        "on_sale": 16
+                    },
+                    "3": {
+                        "price": 10.0,
+                        "on_sale": 10
+                    },
+                    "5": {
+                        "price": 45.0,
+                        "on_sale": 7
+                    },
+                    "9": {
+                        "price": 34.0,
+                        "on_sale": 2
+                    },
+                    "10": {
+                        "price": 50.0,
+                        "on_sale": 10
+                    },
+                    "14": {
+                        "price": 21.0,
+                        "on_sale": 19
+                    },
+                    "15": {
+                        "price": 4.0,
+                        "on_sale": 9
+                    },
+                    "1": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "2": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "4": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "6": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "7": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "8": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "11": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "12": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "13": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "16": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "17": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "18": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "19": {
+                        "on_sale": 0,
+                        "price": 0
+                    }
+                }
+            },
+            {
+                "location": "16",
+                "items": {
+                    "0": {
+                        "price": 26.0,
+                        "on_sale": 13
+                    },
+                    "1": {
+                        "price": 27.0,
+                        "on_sale": 10
+                    },
+                    "6": {
+                        "price": 25.0,
+                        "on_sale": 16
+                    },
+                    "10": {
+                        "price": 8.0,
+                        "on_sale": 3
+                    },
+                    "12": {
+                        "price": 16.0,
+                        "on_sale": 12
+                    },
+                    "13": {
+                        "price": 37.0,
+                        "on_sale": 12
+                    },
+                    "14": {
+                        "price": 30.0,
+                        "on_sale": 11
+                    },
+                    "17": {
+                        "price": 23.0,
+                        "on_sale": 16
+                    },
+                    "18": {
+                        "price": 20.0,
+                        "on_sale": 15
+                    },
+                    "19": {
+                        "price": 15.0,
+                        "on_sale": 19
+                    },
+                    "2": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "3": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "4": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "5": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "7": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "8": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "9": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "11": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "15": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "16": {
+                        "on_sale": 0,
+                        "price": 0
+                    }
+                }
+            },
+            {
+                "location": "17",
+                "items": {
+                    "2": {
+                        "price": 39.0,
+                        "on_sale": 18
+                    },
+                    "3": {
+                        "price": 50.0,
+                        "on_sale": 10
+                    },
+                    "4": {
+                        "price": 36.0,
+                        "on_sale": 6
+                    },
+                    "9": {
+                        "price": 20.0,
+                        "on_sale": 8
+                    },
+                    "10": {
+                        "price": 27.0,
+                        "on_sale": 9
+                    },
+                    "11": {
+                        "price": 50.0,
+                        "on_sale": 10
+                    },
+                    "13": {
+                        "price": 41.0,
+                        "on_sale": 14
+                    },
+                    "14": {
+                        "price": 40.0,
+                        "on_sale": 8
+                    },
+                    "16": {
+                        "price": 26.0,
+                        "on_sale": 19
+                    },
+                    "17": {
+                        "price": 46.0,
+                        "on_sale": 15
+                    },
+                    "18": {
+                        "price": 9.0,
+                        "on_sale": 18
+                    },
+                    "0": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "1": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "5": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "6": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "7": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "8": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "12": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "15": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "19": {
+                        "on_sale": 0,
+                        "price": 0
+                    }
+                }
+            },
+            {
+                "location": "18",
+                "items": {
+                    "0": {
+                        "price": 38.0,
+                        "on_sale": 11
+                    },
+                    "3": {
+                        "price": 26.0,
+                        "on_sale": 4
+                    },
+                    "4": {
+                        "price": 22.0,
+                        "on_sale": 10
+                    },
+                    "6": {
+                        "price": 37.0,
+                        "on_sale": 12
+                    },
+                    "7": {
+                        "price": 35.0,
+                        "on_sale": 17
+                    },
+                    "9": {
+                        "price": 16.0,
+                        "on_sale": 15
+                    },
+                    "10": {
+                        "price": 20.0,
+                        "on_sale": 2
+                    },
+                    "11": {
+                        "price": 37.0,
+                        "on_sale": 19
+                    },
+                    "12": {
+                        "price": 36.0,
+                        "on_sale": 1
+                    },
+                    "16": {
+                        "price": 24.0,
+                        "on_sale": 17
+                    },
+                    "17": {
+                        "price": 12.0,
+                        "on_sale": 11
+                    },
+                    "18": {
+                        "price": 14.0,
+                        "on_sale": 20
+                    },
+                    "19": {
+                        "price": 50.0,
+                        "on_sale": 16
+                    },
+                    "1": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "2": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "5": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "8": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "13": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "14": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "15": {
+                        "on_sale": 0,
+                        "price": 0
+                    }
+                }
+            },
+            {
+                "location": "19",
+                "items": {
+                    "1": {
+                        "price": 21.0,
+                        "on_sale": 4
+                    },
+                    "2": {
+                        "price": 30.0,
+                        "on_sale": 11
+                    },
+                    "3": {
+                        "price": 38.0,
+                        "on_sale": 2
+                    },
+                    "5": {
+                        "price": 50.0,
+                        "on_sale": 8
+                    },
+                    "7": {
+                        "price": 4.0,
+                        "on_sale": 16
+                    },
+                    "8": {
+                        "price": 9.0,
+                        "on_sale": 20
+                    },
+                    "9": {
+                        "price": 16.0,
+                        "on_sale": 9
+                    },
+                    "11": {
+                        "price": 43.0,
+                        "on_sale": 14
+                    },
+                    "12": {
+                        "price": 9.0,
+                        "on_sale": 20
+                    },
+                    "13": {
+                        "price": 4.0,
+                        "on_sale": 15
+                    },
+                    "14": {
+                        "price": 12.0,
+                        "on_sale": 11
+                    },
+                    "17": {
+                        "price": 37.0,
+                        "on_sale": 15
+                    },
+                    "0": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "4": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "6": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "10": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "15": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "16": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "18": {
+                        "on_sale": 0,
+                        "price": 0
+                    },
+                    "19": {
+                        "on_sale": 0,
+                        "price": 0
+                    }
+                }
+            }
+        ],
+        "items_bought": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0
+        },
+        "total_cost": 0
+    },
+    "problem": {
+        "distances": {
+            "(-1,0)": 381.2,
+            "(0,-1)": 381.2,
+            "(-1,1)": 737.52,
+            "(1,-1)": 737.52,
+            "(-1,2)": 452.95,
+            "(2,-1)": 452.95,
+            "(-1,3)": 516.44,
+            "(3,-1)": 516.44,
+            "(-1,4)": 558.53,
+            "(4,-1)": 558.53,
+            "(-1,5)": 108.58,
+            "(5,-1)": 108.58,
+            "(-1,6)": 505.36,
+            "(6,-1)": 505.36,
+            "(-1,7)": 550.41,
+            "(7,-1)": 550.41,
+            "(-1,8)": 240.86,
+            "(8,-1)": 240.86,
+            "(-1,9)": 495.59,
+            "(9,-1)": 495.59,
+            "(-1,10)": 198.04,
+            "(10,-1)": 198.04,
+            "(-1,11)": 745.67,
+            "(11,-1)": 745.67,
+            "(-1,12)": 647.71,
+            "(12,-1)": 647.71,
+            "(-1,13)": 258.31,
+            "(13,-1)": 258.31,
+            "(-1,14)": 446.07,
+            "(14,-1)": 446.07,
+            "(-1,15)": 536.0,
+            "(15,-1)": 536.0,
+            "(-1,16)": 514.06,
+            "(16,-1)": 514.06,
+            "(-1,17)": 510.78,
+            "(17,-1)": 510.78,
+            "(-1,18)": 242.89,
+            "(18,-1)": 242.89,
+            "(-1,19)": 476.88,
+            "(19,-1)": 476.88,
+            "(0,1)": 1033.7,
+            "(1,0)": 1033.7,
+            "(0,2)": 227.66,
+            "(2,0)": 227.66,
+            "(0,3)": 175.31,
+            "(3,0)": 175.31,
+            "(0,4)": 458.57,
+            "(4,0)": 458.57,
+            "(0,5)": 481.77,
+            "(5,0)": 481.77,
+            "(0,6)": 212.51,
+            "(6,0)": 212.51,
+            "(0,7)": 827.23,
+            "(7,0)": 827.23,
+            "(0,8)": 163.69,
+            "(8,0)": 163.69,
+            "(0,9)": 145.5,
+            "(9,0)": 145.5,
+            "(0,10)": 279.21,
+            "(10,0)": 279.21,
+            "(0,11)": 875.2,
+            "(11,0)": 875.2,
+            "(0,12)": 388.63,
+            "(12,0)": 388.63,
+            "(0,13)": 189.71,
+            "(13,0)": 189.71,
+            "(0,14)": 70.01,
+            "(14,0)": 70.01,
+            "(0,15)": 247.75,
+            "(15,0)": 247.75,
+            "(0,16)": 264.56,
+            "(16,0)": 264.56,
+            "(0,17)": 690.96,
+            "(17,0)": 690.96,
+            "(0,18)": 533.02,
+            "(18,0)": 533.02,
+            "(0,19)": 348.08,
+            "(19,0)": 348.08,
+            "(1,2)": 944.03,
+            "(2,1)": 944.03,
+            "(1,3)": 1080.73,
+            "(3,1)": 1080.73,
+            "(1,4)": 826.28,
+            "(4,1)": 826.28,
+            "(1,5)": 638.6,
+            "(5,1)": 638.6,
+            "(1,6)": 1025.31,
+            "(6,1)": 1025.31,
+            "(1,7)": 208.06,
+            "(7,1)": 208.06,
+            "(1,8)": 871.85,
+            "(8,1)": 871.85,
+            "(1,9)": 1077.51,
+            "(9,1)": 1077.51,
+            "(1,10)": 935.42,
+            "(10,1)": 935.42,
+            "(1,11)": 457.03,
+            "(11,1)": 457.03,
+            "(1,12)": 1057.64,
+            "(12,1)": 1057.64,
+            "(1,13)": 983.1,
+            "(13,1)": 983.1,
+            "(1,14)": 1074.62,
+            "(14,1)": 1074.62,
+            "(1,15)": 1035.23,
+            "(15,1)": 1035.23,
+            "(1,16)": 985.84,
+            "(16,1)": 985.84,
+            "(1,17)": 406.28,
+            "(17,1)": 406.28,
+            "(1,18)": 858.75,
+            "(18,1)": 858.75,
+            "(1,19)": 851.31,
+            "(19,1)": 851.31,
+            "(2,3)": 146.54,
+            "(3,2)": 146.54,
+            "(2,4)": 237.45,
+            "(4,2)": 237.45,
+            "(2,5)": 522.61,
+            "(5,2)": 522.61,
+            "(2,6)": 81.47,
+            "(6,2)": 81.47,
+            "(2,7)": 737.35,
+            "(7,2)": 737.35,
+            "(2,8)": 227.18,
+            "(8,2)": 227.18,
+            "(2,9)": 156.31,
+            "(9,2)": 156.31,
+            "(2,10)": 445.73,
+            "(10,2)": 445.73,
+            "(2,11)": 700.46,
+            "(11,2)": 700.46,
+            "(2,12)": 196.73,
+            "(12,2)": 196.73,
+            "(2,13)": 378.99,
+            "(13,2)": 378.99,
+            "(2,14)": 206.0,
+            "(14,2)": 206.0,
+            "(2,15)": 95.26,
+            "(15,2)": 95.26,
+            "(2,16)": 61.13,
+            "(16,2)": 61.13,
+            "(2,17)": 557.52,
+            "(17,2)": 557.52,
+            "(2,18)": 667.72,
+            "(18,2)": 667.72,
+            "(2,19)": 132.19,
+            "(19,2)": 132.19,
+            "(3,4)": 370.71,
+            "(4,3)": 370.71,
+            "(3,5)": 604.2,
+            "(5,3)": 604.2,
+            "(3,6)": 74.06,
+            "(6,3)": 74.06,
+            "(3,7)": 872.98,
+            "(7,3)": 872.98,
+            "(3,8)": 275.75,
+            "(8,3)": 275.75,
+            "(3,9)": 30.81,
+            "(9,3)": 30.81,
+            "(3,10)": 449.72,
+            "(10,3)": 449.72,
+            "(3,11)": 846.57,
+            "(11,3)": 846.57,
+            "(3,12)": 228.66,
+            "(12,3)": 228.66,
+            "(3,13)": 363.72,
+            "(13,3)": 363.72,
+            "(3,14)": 114.4,
+            "(14,3)": 114.4,
+            "(3,15)": 96.17,
+            "(15,3)": 96.17,
+            "(3,16)": 139.06,
+            "(16,3)": 139.06,
+            "(3,17)": 701.19,
+            "(17,3)": 701.19,
+            "(3,18)": 697.76,
+            "(18,3)": 697.76,
+            "(3,19)": 274.56,
+            "(19,3)": 274.56,
+            "(4,5)": 587.93,
+            "(5,4)": 587.93,
+            "(4,6)": 296.67,
+            "(6,4)": 296.67,
+            "(4,7)": 633.55,
+            "(7,4)": 633.55,
+            "(4,8)": 399.51,
+            "(8,4)": 399.51,
+            "(4,9)": 388.01,
+            "(9,4)": 388.01,
+            "(4,10)": 623.1,
+            "(10,4)": 623.1,
+            "(4,11)": 498.76,
+            "(11,4)": 498.76,
+            "(4,12)": 241.23,
+            "(12,4)": 241.23,
+            "(4,13)": 578.29,
+            "(13,4)": 578.29,
+            "(4,14)": 443.4,
+            "(14,4)": 443.4,
+            "(4,15)": 282.64,
+            "(15,4)": 282.64,
+            "(4,16)": 232.57,
+            "(16,4)": 232.57,
+            "(4,17)": 420.01,
+            "(17,4)": 420.01,
+            "(4,18)": 798.88,
+            "(18,4)": 798.88,
+            "(4,19)": 110.86,
+            "(19,4)": 110.86,
+            "(5,6)": 583.98,
+            "(6,5)": 583.98,
+            "(5,7)": 460.43,
+            "(7,5)": 460.43,
+            "(5,8)": 330.55,
+            "(8,5)": 330.55,
+            "(5,9)": 586.04,
+            "(9,5)": 586.04,
+            "(5,10)": 302.33,
+            "(10,5)": 302.33,
+            "(5,11)": 695.01,
+            "(11,5)": 695.01,
+            "(5,12)": 711.07,
+            "(12,5)": 711.07,
+            "(5,13)": 366.86,
+            "(13,5)": 366.86,
+            "(5,14)": 543.81,
+            "(14,5)": 543.81,
+            "(5,15)": 611.79,
+            "(15,5)": 611.79,
+            "(5,16)": 583.17,
+            "(16,5)": 583.17,
+            "(5,17)": 456.25,
+            "(17,5)": 456.25,
+            "(5,18)": 265.2,
+            "(18,5)": 265.2,
+            "(5,19)": 521.99,
+            "(19,5)": 521.99,
+            "(6,7)": 818.46,
+            "(7,6)": 818.46,
+            "(6,8)": 267.61,
+            "(8,6)": 267.61,
+            "(6,9)": 94.59,
+            "(9,6)": 94.59,
+            "(6,10)": 467.82,
+            "(10,6)": 467.82,
+            "(6,11)": 775.87,
+            "(11,6)": 775.87,
+            "(6,12)": 176.18,
+            "(12,6)": 176.18,
+            "(6,13)": 389.65,
+            "(13,6)": 389.65,
+            "(6,14)": 167.59,
+            "(14,6)": 167.59,
+            "(6,15)": 35.85,
+            "(15,6)": 35.85,
+            "(6,16)": 65.38,
+            "(16,6)": 65.38,
+            "(6,17)": 638.62,
+            "(17,6)": 638.62,
+            "(6,18)": 705.24,
+            "(18,6)": 705.24,
+            "(6,19)": 202.41,
+            "(19,6)": 202.41,
+            "(7,8)": 666.32,
+            "(8,7)": 666.32,
+            "(7,9)": 869.51,
+            "(9,7)": 869.51,
+            "(7,10)": 745.93,
+            "(10,7)": 745.93,
+            "(7,11)": 363.59,
+            "(11,7)": 363.59,
+            "(7,12)": 858.41,
+            "(12,7)": 858.41,
+            "(7,13)": 786.15,
+            "(13,7)": 786.15,
+            "(7,14)": 866.98,
+            "(14,7)": 866.98,
+            "(7,15)": 829.34,
+            "(15,7)": 829.34,
+            "(7,16)": 780.65,
+            "(16,7)": 780.65,
+            "(7,17)": 221.27,
+            "(17,7)": 221.27,
+            "(7,18)": 704.71,
+            "(18,7)": 704.71,
+            "(7,19)": 649.09,
+            "(19,7)": 649.09,
+            "(8,9)": 255.93,
+            "(9,8)": 255.93,
+            "(8,10)": 226.06,
+            "(10,8)": 226.06,
+            "(8,11)": 745.01,
+            "(11,8)": 745.01,
+            "(8,12)": 423.45,
+            "(12,8)": 423.45,
+            "(8,13)": 182.08,
+            "(13,8)": 182.08,
+            "(8,14)": 216.93,
+            "(14,8)": 216.93,
+            "(8,15)": 300.17,
+            "(15,8)": 300.17,
+            "(8,16)": 286.3,
+            "(16,8)": 286.3,
+            "(8,17)": 543.66,
+            "(17,8)": 543.66,
+            "(8,18)": 441.08,
+            "(18,8)": 441.08,
+            "(8,19)": 294.88,
+            "(19,8)": 294.88,
+            "(9,10)": 421.72,
+            "(10,9)": 421.72,
+            "(9,11)": 856.02,
+            "(11,9)": 856.02,
+            "(9,12)": 258.03,
+            "(12,9)": 258.03,
+            "(9,13)": 334.61,
+            "(13,9)": 334.61,
+            "(9,14)": 83.6,
+            "(14,9)": 83.6,
+            "(9,15)": 122.1,
+            "(15,9)": 122.1,
+            "(9,16)": 159.66,
+            "(16,9)": 159.66,
+            "(9,17)": 703.34,
+            "(17,9)": 703.34,
+            "(9,18)": 671.44,
+            "(18,9)": 671.44,
+            "(9,19)": 287.66,
+            "(19,9)": 287.66,
+            "(10,11)": 909.28,
+            "(11,10)": 909.28,
+            "(10,12)": 637.31,
+            "(12,10)": 637.31,
+            "(10,13)": 94.37,
+            "(13,10)": 94.37,
+            "(10,14)": 348.9,
+            "(14,10)": 348.9,
+            "(10,15)": 503.24,
+            "(15,10)": 503.24,
+            "(10,16)": 500.96,
+            "(16,10)": 500.96,
+            "(10,17)": 683.47,
+            "(17,10)": 683.47,
+            "(10,18)": 256.88,
+            "(18,10)": 256.88,
+            "(10,19)": 520.55,
+            "(19,10)": 520.55,
+            "(11,12)": 737.48,
+            "(12,11)": 737.48,
+            "(11,13)": 912.92,
+            "(13,11)": 912.92,
+            "(11,14)": 887.85,
+            "(14,11)": 887.85,
+            "(11,15)": 770.64,
+            "(15,11)": 770.64,
+            "(11,16)": 718.0,
+            "(16,11)": 718.0,
+            "(11,17)": 238.82,
+            "(17,11)": 238.82,
+            "(11,18)": 960.21,
+            "(18,11)": 960.21,
+            "(11,19)": 573.81,
+            "(19,11)": 573.81,
+            "(12,13)": 563.4,
+            "(13,12)": 563.4,
+            "(12,14)": 339.32,
+            "(14,12)": 339.32,
+            "(12,15)": 140.93,
+            "(15,12)": 140.93,
+            "(12,16)": 137.3,
+            "(16,12)": 137.3,
+            "(12,17)": 653.32,
+            "(17,12)": 653.32,
+            "(12,18)": 864.34,
+            "(18,12)": 864.34,
+            "(12,19)": 213.0,
+            "(19,12)": 213.0,
+            "(13,14)": 258.28,
+            "(14,13)": 258.28,
+            "(13,15)": 425.47,
+            "(15,13)": 425.47,
+            "(13,16)": 429.77,
+            "(16,13)": 429.77,
+            "(13,17)": 697.88,
+            "(17,13)": 697.88,
+            "(13,18)": 351.16,
+            "(18,13)": 351.16,
+            "(13,19)": 470.6,
+            "(19,13)": 470.6,
+            "(14,15)": 200.0,
+            "(15,14)": 200.0,
+            "(14,16)": 228.18,
+            "(16,14)": 228.18,
+            "(14,17)": 717.24,
+            "(17,14)": 717.24,
+            "(14,18)": 603.03,
+            "(18,14)": 603.03,
+            "(14,19)": 336.17,
+            "(19,14)": 336.17,
+            "(15,16)": 52.77,
+            "(16,15)": 52.77,
+            "(15,17)": 643.52,
+            "(17,15)": 643.52,
+            "(15,18)": 739.22,
+            "(18,15)": 739.22,
+            "(15,19)": 197.71,
+            "(19,15)": 197.71,
+            "(16,17)": 592.11,
+            "(17,16)": 592.11,
+            "(16,18)": 727.33,
+            "(18,16)": 727.33,
+            "(16,19)": 144.94,
+            "(19,16)": 144.94,
+            "(17,18)": 721.44,
+            "(18,17)": 721.44,
+            "(17,19)": 451.85,
+            "(19,17)": 451.85,
+            "(18,19)": 711.62,
+            "(19,18)": 711.62
+        },
+        "goal": {
+            "goal_requests": {
+                "0": 35,
+                "1": 19,
+                "2": 37,
+                "3": 45,
+                "4": 72,
+                "5": 32,
+                "6": 89,
+                "7": 67,
+                "8": 52,
+                "9": 10,
+                "10": 99,
+                "11": 74,
+                "12": 108,
+                "13": 20,
+                "14": 176,
+                "15": 4,
+                "16": 93,
+                "17": 17,
+                "18": 34,
+                "19": 46
+            }
+        }
+    }
+}
