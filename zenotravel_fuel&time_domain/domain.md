@@ -1,6 +1,6 @@
 # Zenotravel Domain (Extended Version)
 
-This document describes the **Zenotravel domain**, extended to include **total-time tracking** for flight durations.
+This document describes the **Zenotravel domain**, extended to include **total-time tracking** for flight durations. Originally developed for the IPC-2002
 
 
 
