@@ -32,16 +32,16 @@ This domain is often used to evaluate search strategies and heuristics in numeri
 
 ---
 
-### Actions
+## ⚙️ Actions
 
-#### 1. `increase-counter`
+### ➕ `increase-counter`
 
 ```lisp
 (:action increase-counter
   :parameters (?c - counter)
   :precondition (< (value ?c) max_int)
   :effect (increase (value ?c) 1)
-)
+)```
 
 ```lisp
 (:action decrease-counter
